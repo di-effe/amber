@@ -1,7 +1,16 @@
 # Amber
 *A [leftwm](https://github.com/leftwm/leftwm) minimalistic theme with very few gadgets, widgets and modules*
 
+
+## Screenshots
+
+![Desktop](./screenshots/amber_desktop.png)
+![Desktop](./screenshots/amber_tiles.png)
+![Desktop](./screenshots/amber_apps.png)
+![Desktop](./screenshots/amber_powermenu.png)
  
+
+
 ## Changelog
 
 ### v0.1
@@ -165,15 +174,6 @@ If you prefer to manage the module in your polybar.config file I left two module
 - layout0, for workspace0
 - layout1, for workspace1
 
-
-
-## Screenshots
-
-- Desktop
-- Powermenu
-- Application launcher
-- Dmenu
-- Keymap
 
 
 ## Credit / Sources
