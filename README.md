@@ -98,9 +98,8 @@ Optionally replace the original files in ~/.config/rofi with the content of the 
 ### rofi/applets/styles/colors.rasi
 - Set to material-dark/amber.rasi color scheme
 
-### launcher.sh
-- TBD
-- TBD
+### rofi/launchers/colorful/launcher.sh
+- Color changes
 
 
 ## Configuration
