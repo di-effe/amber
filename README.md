@@ -26,6 +26,8 @@
 
 ### To do
 - A better keymap implementation
+- Experimenting with eww 
+- Experimenting with lemonbar
 
 ## Dependencies
 
@@ -173,6 +175,17 @@ You can chose to
 If you prefer to manage the module in your polybar.config file I left two modules
 - layout0, for workspace0
 - layout1, for workspace1
+
+
+### Wallpapers
+
+*up* is configured with the options to
+- set random wallpapers from the /wallpapers folder
+- set ONE wallpaper for all displays
+- set MULTIPLE wallpapers for all displays (default)
+
+Uncomment what you prefer and comment the rest. It should be clear enough reading the file.
+
 
 
 
