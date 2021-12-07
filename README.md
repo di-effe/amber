@@ -5,7 +5,7 @@
 # Disclaimer
 Amber was done in a couple of days without any prior experience on LeftWM theming or tiling window managers in general. It is quite possible there are a few bugs here and there and that things can be improved.
 
-## Screenshots
+# Screenshots
 
 ![Desktop](./screenshots/amber_desktop.png)
 ![Desktop](./screenshots/amber_tiles.png)
@@ -15,9 +15,9 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
  
 
 
-## Changelog
+# Changelog
 
-### v0.1
+## v0.1
 - Dual monitor support
 - Amber color scheme
 - Powermenu and application launcher (rofi-themes with some small tweaks)
@@ -27,12 +27,12 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 - Keymap
 
 
-### To do
+## To do
 - A better keymap implementation
 - Experimenting with eww 
 - Experimenting with lemonbar
 
-## Dependencies
+# Dependencies
 
 - [leftwm](https://github.com/leftwm/leftwm)
 - polybar
@@ -55,7 +55,7 @@ Optionally
 - lxapperance
 
 
-## Installation
+# Installation
 1. Install all required dependencies
 
 2. Clone the repository
@@ -97,20 +97,20 @@ chmod +x setup.sh
 ```
 Optionally replace the original files in ~/.config/rofi with the content of the rofi folder in this repository.
 
-### rofi/applets/menu/powermenu.sh
+## rofi/applets/menu/powermenu.sh
 - Logout option for LeftWM
 - Main lockscreen set to betterlockscreen
 
-### rofi/applets/styles/colors.rasi
+## rofi/applets/styles/colors.rasi
 - Set to material-dark/amber.rasi color scheme
 
-### rofi/launchers/colorful/launcher.sh
+## rofi/launchers/colorful/launcher.sh
 - Color changes
 
 
-## Configuration
+# Configuration
 
-### Keymap
+## Keymap
 At the moment this is a simple and dirty snippet of code placed in the *up* file
 
 ```
@@ -151,7 +151,7 @@ key = "k"
 ```
 
 
-### dmenu
+## dmenu
 I am using a custom dmenu color scheme. If you like to use pick it from the config.toml in this repository or configure yours like this:
 
 ```
@@ -162,7 +162,7 @@ modifier = ["modkey"]
 key = "p"
 ```
 
-### Layout module
+## Layout module
 By default the layout module is configured in the template.layout file
 ```
 %{O20}
@@ -180,7 +180,7 @@ If you prefer to manage the module in your polybar.config file I left two module
 - layout1, for workspace1
 
 
-### Wallpapers
+## Wallpapers
 
 *up* is configured with the options to
 - set random wallpapers from the /wallpapers folder
@@ -192,7 +192,7 @@ Uncomment what you prefer and comment the rest. It should be clear enough readin
 
 
 
-## Credit / Sources
+# Credit / Sources
 Built on top of [basic_polybar](https://github.com/leftwm/leftwm/tree/main/themes/basic_polybar) theme by LeftWM team.
 
 And some inspiration / patches taken from these wonderful sources:
