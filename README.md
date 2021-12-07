@@ -8,6 +8,7 @@
 ![Desktop](./screenshots/amber_tiles.png)
 ![Desktop](./screenshots/amber_apps.png)
 ![Desktop](./screenshots/amber_powermenu.png)
+![Desktop](./screenshots/amber_keymap.png)
  
 
 
