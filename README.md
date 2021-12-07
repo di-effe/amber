@@ -105,7 +105,7 @@ Optionally replace the original files in ~/.config/rofi with the content of the 
 
 ## Configuration
 
-# Keymap
+### Keymap
 At the moment this is a simple and dirty snippet of code placed in the *up* file
 
 ```
@@ -146,7 +146,7 @@ key = "k"
 ```
 
 
-# dmenu
+### dmenu
 I am using a custom dmenu color scheme. If you like to use pick it from the config.toml in this repository or configure yours like this:
 
 ```
@@ -157,7 +157,7 @@ modifier = ["modkey"]
 key = "p"
 ```
 
-# Layout module
+### Layout module
 By default the layout module is configured in the template.layout file
 ```
 %{O20}
