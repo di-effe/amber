@@ -23,7 +23,7 @@
 - polybar
 - dmenu 
 - feh
-- [rofi](https://github.com/adi1090x/rofi) 
+- [rofi](https://github.com/davatorium/rofi) 
 - [rofi-themes](ttps://github.com/adi1090x/rofi)
 - [picom by ibhagwan](https://github.com/ibhagwan/picom)
 - [nerd fonts](https://www.nerdfonts.com/)
@@ -41,7 +41,36 @@ Optionally
 
 
 ## Installation
-TBD
+1. Install all required dependencies
+
+2. Clone the repository
+
+```BASH
+git clone https://github.com/di-effe/amber.git
+```
+
+3. Make a copy of this project in your themes folder
+
+```BASH
+cp -r ./amber ~/.config/leftwm/themes
+```
+
+4. Remove the symlink to your current theme if set
+
+```BASH
+rm ~/.config/leftwm/themes/current
+```
+5. Set this as your current theme
+
+```BASH
+ln -s ~/.config/leftwm/themes/amber ~/.config/leftwm/themes/current
+```
+
+6. Restart your window manager
+
+```Default shortcut
+$MOD + Shift + r
+```
 
 Polybar is configured with an application launcher (left side) and a powermenu (right side) that requires both rofi and rofi-themes.
 To install rofi themes:
