@@ -1,7 +1,6 @@
 # Amber
-*A leftWM theme*
+*A [leftwm](https://github.com/leftwm/leftwm) minimalistic theme with very few gadgets, widgets and modules*
 
-This a minimalistic theme with very few gadgets, widgets and modules.
  
 ## Changelog
 
@@ -24,20 +23,21 @@ This a minimalistic theme with very few gadgets, widgets and modules.
 - polybar
 - dmenu 
 - feh
-- rofi 
-- scrot
-- viewnior
+- [rofi](https://github.com/adi1090x/rofi) 
 - [rofi-themes](ttps://github.com/adi1090x/rofi)
-- picom by ibhagwan(https://github.com/ibhagwan/picom)
+- [picom by ibhagwan](https://github.com/ibhagwan/picom)
 - [nerd fonts](https://www.nerdfonts.com/)
-- betterlockscreen (optional)
+- betterlockscreen
 - pulseaudio
-- pavucontrol (optional)
-- lxapperance
+- pavucontrol
 - blueman
 - nm-applet
 - notify-send
 
+Optionally
+- scrot
+- viewnior
+- lxapperance
 
 
 ## Installation
