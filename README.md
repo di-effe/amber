@@ -2,6 +2,9 @@
 *A [leftwm](https://github.com/leftwm/leftwm) minimalistic theme with very few gadgets, widgets and modules*
 
 
+# Disclaimer
+Amber was done in a couple of days without any prior experience on LeftWM theming or tiling window managers in general. It is quite possible there are a few bugs here and there and that things can be improved.
+
 ## Screenshots
 
 ![Desktop](./screenshots/amber_desktop.png)
