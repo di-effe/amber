@@ -1,0 +1,162 @@
+# Amber
+*A leftWM theme*
+
+This a minimalistic theme with very few gadgets, widgets and modules.
+ 
+## Changelog
+
+### v0.1
+- Dual monitor support
+- Amber color scheme
+- Powermenu and application launcher (rofi-themes with some small tweaks)
+- Picom conf for rounded corners and transparency for inactive windows
+- Polybar modules to show and rotate layouts (left click next, right click previous)
+- template.liquid config to show and rotate layouts (left click next, right click previous) 
+- Keymap
+
+
+### To do
+- A better keymap implementation
+
+## Dependencies
+
+- [leftwm] (https://github.com/leftwm/leftwm)
+- polybar
+- dmenu 
+- feh
+- rofi 
+- scrot
+- viewnior
+- [rofi-themes] (ttps://github.com/adi1090x/rofi)
+- picom by ibhagwan(https://github.com/ibhagwan/picom)
+- [nerd fonts] (https://www.nerdfonts.com/)
+- betterlockscreen (optional)
+- pulseaudio
+- pavucontrol (optional)
+- lxapperance
+- blueman
+- nm-applet
+- notify-send
+
+
+
+## Installation
+TBD
+
+Polybar is configured with an application launcher (left side) and a powermenu (right side) that requires both rofi and rofi-themes.
+To install rofi themes:
+```
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+```
+Optionally replace the original files in ~/.config/rofi with the content of the rofi folder in this repository.
+
+### rofi/applets/menu/powermenu.sh
+- Logout option for LeftWM
+- Main lockscreen set to betterlockscreen
+
+### rofi/applets/styles/colors.rasi
+- Set to material-dark/amber.rasi color scheme
+
+### launcher.sh
+- TBD
+- TBD
+
+
+## Configuration
+
+# Keymap
+At the moment this is a simple and dirty snippet of code placed in the *up* file
+
+```
+# KEYMAP
+
+KEYBINDINGS=/tmp/leftwm-keybindings
+if [ -f "$KEYBINDINGS" ]; then
+    rm $KEYBINDINGS
+fi
+leftwm-check -v | \
+grep Keybind | \
+sed -e "s/Keybind: Keybind { command: //g;s/ } true//;s/ } false//" \
+> $KEYBINDINGS
+
+
+KEYMAP=/tmp/leftwm-keymap
+if [ -f "$KEYMAP" ]; then
+    rm $KEYMAP
+fi
+
+sort $KEYBINDINGS | \
+tr -d '"' | \
+sed -e "s/modifier: //g;s/key: //;s/value: None//;s/value: Some(//;s/)//;s/modkey,/modkey +/" | \
+awk -F, '{print $3","$4","$1","$2}' | \
+column -s ',' -t \
+> $KEYMAP
+```
+
+What id does, hopefully, is to retrieve all key bindings to create a keymap to show using rofi.
+My config.toml file is configured like this:
+
+```
+[[keybind]]
+command = "Execute"
+value = "rofi -dmenu -input /tmp/leftwm-keymap -window-title 'Keymap' -theme ~/.config/leftwm/themes/amber/rofi/keymap.rasi"
+modifier = ["modkey", "Shift"]
+key = "k"
+```
+
+
+# dmenu
+I am using a custom dmenu color scheme. If you like to use pick it from the config.toml in this repository or configure yours like this:
+
+```
+[[keybind]]
+command = "Execute"
+value = "dmenu_run -p 'Run: ' -nb '#ffb300' -nf '#000000' -sb '#333333' -sf '#FFFFFF'"
+modifier = ["modkey"]
+key = "p"
+```
+
+# Layout module
+By default the layout module is configured in the template.layout file
+```
+%{O20}
+%{A1:leftwm-command "NextLayout" :}%{A3:leftwm-command "PreviousLayout" :}
+%{F#ffb300}%{F-} [{{ workspace.layout }}]
+%{A}%{A}
+```
+You can chose to 
+- remove it, deleting those lines
+- keep it aligned to the left, but change the offset in the %{O20} field (those are 20 pixels)
+- move it to the center of the screen, replacing %{O20} with %{c}
+
+If you prefer to manage the module in your polybar.config file I left two modules
+- layout0, for workspace0
+- layout1, for workspace1
+
+
+
+## Screenshots
+
+- Desktop
+- Powermenu
+- Application launcher
+- Dmenu
+- Keymap
+
+
+## Credit / Sources
+Built on top of [basic_polybar](https://github.com/leftwm/leftwm/tree/main/themes/basic_polybar) theme by LeftWM team.
+
+And some inspiration / patches taken from these wonderful sources:
+
+- @AethanFoot [leftwm-theme-dracula-rounded](https://github.com/AethanFoot/leftwm-theme-dracula-rounded) - No license. Author doesn't state permissions on code, will update as neccessary.
+
+- @b4skyx [leftwm-soothe](https://github.com/b4skyx/leftwm-soothe) - No license. Author doesn't state permissions on code, will update as neccessary.
+
+- @VentGrey [Epitaph](https://github.com/VentGrey/Epitaph/) - MIT License copyrighted by Qwart376, author of [Blue Coffee](https://github.com/Qwart376/Blue-Coffee. So I guess this is a russian-doll license thing now.
+
+Wallpapers by [Atlas-ark](https://www.reddit.com/user/atlas-ark/). I am not aware of any kind of licence, but if you can buy him a beer :)
+

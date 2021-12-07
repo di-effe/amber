@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+# Set background
+if [ -x "$(command -v feh)" ]; then
+  feh --bg-fill $SCRIPTPATH/down.jpg
+fi
+
+echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+
+
+# Kill procs
+pkill picom 
+pkill polybar
+
+
+# Remove temp files
+
+KEYBINDINGS=/tmp/leftwm-keybindings
+if [ -f "$KEYBINDINGS" ]; then
+    rm $KEYBINDINGS
+fi
+
+KEYMAP=/tmp/leftwm-keymap
+if [ -f "$KEYMAP" ]; then
+    rm $KEYMAP
+fi
