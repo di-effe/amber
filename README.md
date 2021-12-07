@@ -20,16 +20,16 @@ This a minimalistic theme with very few gadgets, widgets and modules.
 
 ## Dependencies
 
-- [leftwm] (https://github.com/leftwm/leftwm)
+- [leftwm](https://github.com/leftwm/leftwm)
 - polybar
 - dmenu 
 - feh
 - rofi 
 - scrot
 - viewnior
-- [rofi-themes] (ttps://github.com/adi1090x/rofi)
+- [rofi-themes](ttps://github.com/adi1090x/rofi)
 - picom by ibhagwan(https://github.com/ibhagwan/picom)
-- [nerd fonts] (https://www.nerdfonts.com/)
+- [nerd fonts](https://www.nerdfonts.com/)
 - betterlockscreen (optional)
 - pulseaudio
 - pavucontrol (optional)
