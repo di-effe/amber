@@ -19,6 +19,7 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 ## v0.1.1
 - Removed dependency from rofi-themes for applcation launcher
+- Removed dependency from rofi-themes for powermenu
 
 ## v0.1
 - Dual monitor support
@@ -31,7 +32,8 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 
 ## To do
-- Remove dependency on rofi-themes
+- ~~Remove dependency on rofi-themes~~
+- A better implementation for powermenu
 - A better keymap implementation
 - Experimenting with eww 
 - Experimenting with lemonbar
