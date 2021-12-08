@@ -43,7 +43,6 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 - dmenu 
 - feh
 - [rofi](https://github.com/davatorium/rofi) 
-- [rofi-themes](ttps://github.com/adi1090x/rofi)
 - [picom by ibhagwan](https://github.com/ibhagwan/picom)
 - [nerd fonts](https://www.nerdfonts.com/)
 - betterlockscreen
@@ -93,25 +92,6 @@ $MOD + Shift + r
 **!!! IMPORTANT !!!**
 
 Polybar is configured with an application launcher (left side) and a powermenu (right side). Both require **rofi** to be installed on your system, if you want to use them.
-
-Powermenu is currently still based on **rofi-themes**, so you would beed those too.
-
-To install rofi themes:
-```
-git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chmod +x setup.sh
-./setup.sh
-```
-Optionally replace the original files in ~/.config/rofi with the content of the rofi folder in this repository.
-
-## rofi/applets/menu/powermenu.sh
-- Logout option for LeftWM
-- Main lockscreen set to betterlockscreen
-
-## rofi/applets/styles/colors.rasi
-- Set to material-dark/amber.rasi color scheme
-
 
 
 # Configuration
