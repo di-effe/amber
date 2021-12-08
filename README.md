@@ -28,6 +28,7 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 
 ## To do
+- Remove dependency on rofi-themes
 - A better keymap implementation
 - Experimenting with eww 
 - Experimenting with lemonbar
@@ -86,6 +87,7 @@ ln -s ~/.config/leftwm/themes/amber ~/.config/leftwm/themes/current
 ```Default shortcut
 $MOD + Shift + r
 ```
+** !!! IMPORTANT !!! **
 
 Polybar is configured with an application launcher (left side) and a powermenu (right side) that requires both rofi and rofi-themes.
 To install rofi themes:
