@@ -193,4 +193,7 @@ Wallpapers by [Atlas-ark](https://www.reddit.com/user/atlas-ark/). I am not awar
 
 Application launcher is based on the [rofi-themes-collection](https://github.com/lr-tech/rofi-themes-collection) by [LR Tech](https://github.com/lr-tech) covered by a GNU General Public License v3.0
 
+Powermenu is loosely based on the [rofi-themes](hhttps://github.com/adi1090x/rofi) by [adi1090x](https://github.com/adi1090x) covered by a GNU General Public License v3.0
+
+
 Ping me if I am messing up something here :)
