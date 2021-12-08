@@ -17,6 +17,9 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 # Changelog
 
+## v0.1.1
+- Removed dependency from rofi-themes for applcation launcher
+
 ## v0.1
 - Dual monitor support
 - Amber color scheme
@@ -89,7 +92,10 @@ $MOD + Shift + r
 ```
 **!!! IMPORTANT !!!**
 
-Polybar is configured with an application launcher (left side) and a powermenu (right side) that requires both rofi and rofi-themes.
+Polybar is configured with an application launcher (left side) and a powermenu (right side). Both require **rofi** to be installed on your system, if you want to use them.
+
+Powermenu is currently still based on **rofi-themes**, so you would beed those too.
+
 To install rofi themes:
 ```
 git clone --depth=1 https://github.com/adi1090x/rofi.git
@@ -106,8 +112,6 @@ Optionally replace the original files in ~/.config/rofi with the content of the 
 ## rofi/applets/styles/colors.rasi
 - Set to material-dark/amber.rasi color scheme
 
-## rofi/launchers/colorful/launcher.sh
-- Color changes
 
 
 # Configuration
@@ -207,3 +211,6 @@ And some inspiration / patches taken from these wonderful sources:
 
 Wallpapers by [Atlas-ark](https://www.reddit.com/user/atlas-ark/). I am not aware of any kind of licence, but if you can buy him a beer :)
 
+Application launcher is based on the [rofi-themes-collection](https://github.com/lr-tech/rofi-themes-collection) by [LR Tech](https://github.com/lr-tech) covered by a GNU General Public License v3.0
+
+Ping me if I am messing up something here :)
