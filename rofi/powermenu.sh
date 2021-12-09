@@ -19,7 +19,7 @@ case $chosen in
 		elif [[ -f /usr/bin/i3lock ]]; then
 			i3lock
 		fi
-        ;;    
+	;;    
     $shutdown)
         systemctl poweroff
         ;;
@@ -27,20 +27,12 @@ case $chosen in
         systemctl reboot
         ;;
     $suspend)
-		mpc -q pause
-		amixer set Master mute
-		systemctl suspend
+	mpc -q pause
+	amixer set Master mute
+	systemctl suspend
         ;;
     $logout)
-		if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
-			openbox --exit
-		elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-			bspc quit
-		elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
-			i3-msg exit
-			elif [[ "$DESKTOP_SESSION" == "leftwm" ]]; then
-			loginctl kill-session $XDG_SESSION_ID
-		fi
-        ;;
+        loginctl terminate-session ${XDG_SESSION_ID-}	
+	;;
 esac
 
