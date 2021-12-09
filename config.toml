@@ -31,13 +31,13 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "~/.config/rofi/bin/launcher_colorful"
+value = "rofi -show drun -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi"
 modifier = ["modkey"]
 key = "space"
 
 [[keybind]]
 command = "Execute"
-value = "~/.config/rofi/bin/menu_powermenu"
+value = "~/.config/leftwm/themes/current/rofi/powermenu.sh"
 modifier = ["modkey", "Shift"]
 key = "p"
 
