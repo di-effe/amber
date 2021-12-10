@@ -5,6 +5,7 @@
 # Disclaimer
 Amber was done in a couple of days without any prior experience on LeftWM theming or tiling window managers in general. It is quite possible there are a few bugs here and there and that things can be improved.
 
+
 # Screenshots
 
 ![Desktop](./screenshots/amber_desktop.png)
@@ -33,6 +34,9 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 ## To do
 - ~~Remove dependency on rofi-themes~~
+- A better tag module
+- Fallback fonts
+- Volume slider (arco leftwm)
 - A better implementation for powermenu
 - A better keymap implementation
 - Experimenting with eww 

@@ -13,7 +13,7 @@
 %{A}
 {% else tag.visible  %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#f8f8f2}%{T1}{{tag.name}}  %{F-}
+%{T1}%{F#f8f8f2}{{tag.name}}  %{F-}
 %{A}
 {% endif %}
 {% endfor %}
