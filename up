@@ -49,8 +49,8 @@ echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 # NOTE: the last image path DO NOT end with "\"
 if [ -x "$(command -v feh)" ]; then
   feh --bg-fill \
-  "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-arch3.png \
-  "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-leftwm.png
+  "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-leftwm.png \
+  "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-arch3.png
 fi
 # END ----------------------------------------------------------------------+
 
