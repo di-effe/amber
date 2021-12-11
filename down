@@ -13,6 +13,7 @@ echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 # Kill procs
 pkill picom 
 pkill polybar
+pkill volumeicon
 
 
 # Remove temp files

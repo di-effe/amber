@@ -13,6 +13,22 @@ fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
 
+
+# keybindings daemon if exist 
+if [ -x "$(command -v sxhkd)" ]; then
+    sxhkd -c ~/.config/leftwm/sxhkd/sxhkdrc &
+fi
+
+
+# apps
+nm-applet &
+pamac-tray &
+xfce4-power-manager &
+numlockx on &
+blueberry-tray &
+volumeicon &
+
+
 # boot picom if it exists
 if [ -x "$(command -v VBoxClient)" ]; then
   echo "Not enabling picom on virtualbox"
