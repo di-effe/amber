@@ -34,9 +34,10 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 ## To do
 - ~~Remove dependency on rofi-themes~~
-- A better tag module
-- Fallback fonts
-- Volume slider (arco leftwm)
+- ~~A better tag module~~
+- ~~Fallback fonts~~
+- ~~Volume slider (arco leftwm)~~
+- Update screenshots
 - A better implementation for powermenu
 - A better keymap implementation
 - Experimenting with eww 
@@ -54,8 +55,13 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 - betterlockscreen
 - pulseaudio
 - pavucontrol
-- blueman
 - nm-applet
+- pamac
+- xfce4-power-manager
+- numlockx
+- blueberry
+- volumeicon
+
 - notify-send
 
 Optionally

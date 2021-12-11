@@ -13,6 +13,10 @@ echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 # Kill procs
 pkill picom 
 pkill polybar
+pkill nm-applet
+pkill pamac-tray
+pkill xfce4-power-manager
+pkill blueberry-tray
 pkill volumeicon
 
 
