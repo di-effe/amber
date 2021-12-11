@@ -1,4 +1,15 @@
 #################################
+#             Corners           #
+#################################
+corner-radius = 8.0;
+rounded-corners-exclude = [
+  "class_g = 'Polybar'",
+];
+round-borders = 1;
+round-borders-exclude = [
+];
+
+#################################
 #             Shadows           #
 #################################
 
@@ -8,22 +19,22 @@
 # unless explicitly requested using the wintypes option.
 #
 # shadow = false
-shadow = true;
+shadow = false;
 
 # The blur radius for shadows, in pixels. (defaults to 12)
 # shadow-radius = 12
-shadow-radius = 7;
+# shadow-radius = 8;
 
 # The opacity of shadows. (0.0 - 1.0, defaults to 0.75)
 # shadow-opacity = .75
 
 # The left offset for shadows, in pixels. (defaults to -15)
 # shadow-offset-x = -15
-shadow-offset-x = -7;
+# shadow-offset-x = -2;
 
 # The top offset for shadows, in pixels. (defaults to -15)
 # shadow-offset-y = -15
-shadow-offset-y = -7;
+# shadow-offset-y = -2;
 
 # Avoid drawing shadows on dock/panel windows. This option is deprecated,
 # you should use the *wintypes* option in your config file instead.
@@ -62,36 +73,13 @@ shadow-offset-y = -7;
 #
 # shadow-exclude = []
 shadow-exclude = [
-    "name = 'Notification'",
-    "class_g ?= 'Notify-osd'",
-    "name = 'Plank'",
-    "name = 'Docky'",
-    "name = 'Kupfer'",
-    "name = 'xfce4-notifyd'",
-    "name *= 'VLC'",
-    "name *= 'compton'",
-    "name *= 'Chromium'",
-    "name *= 'Chrome'",
-    "class_g = 'Firefox' && argb",
-    "class_g = 'Conky'",
-    "class_g = 'Kupfer'",
-    "class_g = 'Synapse'",
-    "class_g ?= 'Notify-osd'",
-    "class_g ?= 'Cairo-dock'",
-    "class_g = 'Cairo-clock'",
-    "class_g ?= 'Xfce4-notifyd'",
-    "class_g ?= 'Xfce4-power-manager'",
-    "_GTK_FRAME_EXTENTS@:c",
-	  "class_g = 'Dunst'",
-	  "class_g = 'slop'",
-	  "class_g = 'Rofi'",
-	  "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+  "name = 'Notification'",
+  "class_g = 'Conky'",
+  "class_g ?= 'Notify-osd'",
+  "class_g = 'Cairo-clock'",
+  "class_g ?= 'Rofi'",
+  "_GTK_FRAME_EXTENTS@:c"
 ];
-
-# Add this one too for ...
-    # "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
-# Add this one above to the list to have no shadow in Openbox menu
-	# "! name~=''",
 
 # Specify a X geometry that describes the region in which shadow should not
 # be painted in, such as a dock window region. Use 
@@ -108,7 +96,6 @@ shadow-exclude = [
 #           Fading              #
 #################################
 
-
 # Fade windows in/out when opening/closing and when opacity changes,
 #  unless no-fading-openclose is used.
 # fading = false
@@ -116,40 +103,40 @@ fading = true
 
 # Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)
 # fade-in-step = 0.028
-fade-in-step = 0.028;
+fade-in-step = 0.03;
 
 # Opacity change between steps while fading out. (0.01 - 1.0, defaults to 0.03)
 # fade-out-step = 0.03
-fade-out-step = 0.08;
+fade-out-step = 0.03;
 
 # The time between steps in fade step, in milliseconds. (> 0, defaults to 10)
-fade-delta = 8
+fade-delta = 3
 
 # Specify a list of conditions of windows that should not be faded.
 # fade-exclude = []
 
 # Do not fade on window open/close.
-no-fading-openclose = false
+# no-fading-openclose = false
 
 # Do not fade destroyed ARGB windows with WM frame. Workaround of bugs in Openbox, Fluxbox, etc.
-no-fading-destroyed-argb = true
+# no-fading-destroyed-argb = false
 
 
 #################################
 #   Transparency / Opacity      #
 #################################
 
-
 # Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)
 # inactive-opacity = 1
-inactive-opacity = 1;
+inactive-opacity = 0.95;
 
 # Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
 # frame-opacity = 1.0
-frame-opacity = 0.9;
+frame-opacity = 1;
 
 # Default opacity for dropdown menus and popup menus. (0.0 - 1.0, defaults to 1.0)
-# menu-opacity = 1.0
+#menu-opacity = 1.0
+opacity = 1.0
 
 # Let inactive opacity set by -i override the '_NET_WM_OPACITY' values of windows.
 # inactive-opacity-override = true
@@ -175,7 +162,7 @@ focus-exclude = [ "class_g = 'Cairo-clock'" ];
 # example:
 #    opacity-rule = [ "80:class_g = 'URxvt'" ];
 #
-opacity-rule = [ "80:class_g = 'Alacritty'" ]
+# opacity-rule = []
 
 
 #################################
@@ -212,7 +199,7 @@ opacity-rule = [ "80:class_g = 'Alacritty'" ]
 #   blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1";
 #
 # blur-kern = ''
-blur-kern = "3x3box";
+# blur-kern = "3x3box";
 
 
 # Exclude conditions for background blur.
@@ -233,44 +220,43 @@ blur-background-exclude = [
 # Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.
 # `xrender` is the default one.
 #
-# backend = "glx"
-# backend = "xr_glx_hybrid"
-backend = "xrender";
+# backend = 'glx'
+backend = "glx";
 
 # Enable/disable VSync.
-vsync = false
-#vsync = true
+# vsync = false
+vsync = true
 
 # Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
-# dbus = false
+dbus = false
 
 # Try to detect WM windows (a non-override-redirect window with no 
 # child that has 'WM_STATE') and mark them as active.
 #
 # mark-wmwin-focused = false
-mark-wmwin-focused = true;
+mark-wmwin-focused = false;
 
 # Mark override-redirect windows that doesn't have a child window with 'WM_STATE' focused.
 # mark-ovredir-focused = false
-mark-ovredir-focused = true;
+mark-ovredir-focused = false;
 
 # Try to detect windows with rounded corners and don't consider them 
 # shaped windows. The accuracy is not very high, unfortunately.
 #
 # detect-rounded-corners = false
-detect-rounded-corners = true;
+#detect-rounded-corners = true;
 
 # Detect '_NET_WM_OPACITY' on client windows, useful for window managers
 # not passing '_NET_WM_OPACITY' of client windows to frame windows.
 #
 # detect-client-opacity = false
-detect-client-opacity = true;
+# detect-client-opacity = true;
 
 # Specify refresh rate of the screen. If not specified or 0, picom will 
 # try detecting this with X RandR extension.
 #
 # refresh-rate = 60
-refresh-rate = 0
+refresh-rate = 60
 
 # Limit picom to repaint at most once every 1 / 'refresh_rate' second to 
 # boost performance. This should not be used with 
@@ -302,14 +288,14 @@ refresh-rate = 0
 # in the same group focused at the same time.
 #
 # detect-transient = false
-detect-transient = true
+detect-transient = false
 
 # Use 'WM_CLIENT_LEADER' to group windows, and consider windows in the same 
 # group focused at the same time. 'WM_TRANSIENT_FOR' has higher priority if 
 # detect-transient is enabled, too.
 #
 # detect-client-leader = false
-detect-client-leader = true
+detect-client-leader = false
 
 # Resize damaged region by a specific number of pixels. 
 # A positive value enlarges it while a negative one shrinks it. 
@@ -334,7 +320,7 @@ detect-client-leader = true
 # practically happened) and may not work with blur-background. 
 # My tests show a 15% performance boost. Recommended.
 #
-# glx-no-stencil = false
+glx-no-stencil = true
 
 # GLX backend: Avoid rebinding pixmap on window damage. 
 # Probably could improve performance on rapid window content changes, 
@@ -392,7 +378,7 @@ use-damage = true
 # using *--log-file*, since it can generate a huge stream of logs.
 #
 # log-level = "debug"
-log-level = "warn";
+log-level = "error";
 
 # Set the log file.
 # If *--log-file* is never specified, logs will be written to stderr. 
@@ -400,10 +386,10 @@ log-level = "warn";
 # logs might still be written to the stderr. 
 # When setting this option from the config file, it is recommended to use an absolute path.
 #
-#log-file = '~/.config/picom.log'
+# log-file = '/path/to/your/log/file'
 
 # Show all X errors (for debugging)
-show-all-xerrors = true
+# show-all-xerrors = false
 
 # Write process ID to a file.
 # write-pid-path = '/path/to/your/log/file'
@@ -440,9 +426,7 @@ show-all-xerrors = true
 #
 wintypes:
 {
-  tooltip = { fade = true; shadow = true; opacity = 0.9; focus = true; full-shadow = false; };
-  dock = { shadow = false; }
-  dnd = { shadow = false; }
-  popup_menu = { opacity = 0.9; }
-  dropdown_menu = { opacity = 0.9; }
+  tooltip = { fade = true; opacity = 1.0; focus = true; full-shadow = false; };
+  popup_menu = { opacity = 1.0; }
+  dropdown_menu = { opacity = 1.0; }
 };
