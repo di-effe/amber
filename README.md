@@ -113,6 +113,12 @@ Polybar is configured with an application launcher (left side) and a powermenu (
 
 # Configuration
 
+## Systray
+Using polybar you'll find that systray is running in *detached* mode on the left of the power menu.
+At the moment its X position is configured in **polybar.conf** with a negative **tray-offset-x** value, but it's not an ideal solution because if you need to add modules on the right, close to the powerbutton, you'll also need to increase the negative X position.
+
+
+
 ## Keymap
 At the moment this is a simple and dirty snippet of code placed in the *up* file
 
