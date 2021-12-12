@@ -5,7 +5,7 @@
 # Disclaimer
 At the moment Amber is more like a rolling-release-theme, but I'll try to mark the main changes in the changelog below.
 
-Also development and tests are done on ArcolinuxB, so it likely that distro would automatically satisfy most if not all dependencies.
+Also development and tests are done on ArcolinuxB, so that distro would likely satisfy most if not all dependencies automatically.
 
 
 # Screenshots
