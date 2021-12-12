@@ -65,7 +65,7 @@ Run by *up* script
 - numlockx
 - blueberry
 - volumeicon
-- [picom by ibhagwan](https://github.com/ibhagwan/picom)
+- picom
 
 Run by polybar (and keybindings)
 
