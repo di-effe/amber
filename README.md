@@ -42,8 +42,8 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - ~~A better tag module~~
 - ~~Fallback fonts~~
 - ~~Volume slider (using volumeicon)~~
-- Update screenshots
-- Polybar modules config as PeterDauwe
+- ~~Update screenshots~~
+- ~~Polybar modules config as PeterDauwe~~
 - A better implementation for powermenu
 - A better keymap implementation
 - Experimenting with eww 
@@ -213,6 +213,8 @@ And some inspiration / patches taken from these wonderful sources:
 - @VentGrey [Epitaph](https://github.com/VentGrey/Epitaph/) - MIT License copyrighted by Qwart376, author of [Blue Coffee](https://github.com/Qwart376/Blue-Coffee. So I guess this is a russian-doll license thing now.
 
 - Candy from Arcolinux team.
+
+- Polybar modules configuration style (plus snippets and scripts) from [Peter Dauwe](https://github.com/PeterDauwe)
 
 Wallpapers by [Atlas-ark](https://www.reddit.com/user/atlas-ark/). I am not aware of any kind of licence, but if you can buy him a beer :)
 
