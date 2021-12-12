@@ -3,7 +3,9 @@
 
 
 # Disclaimer
-Amber was done in a couple of days without any prior experience on LeftWM theming or tiling window managers in general. It is quite possible there are a few bugs here and there and that things can be improved.
+At the moment Amber is more like a rolling-release-theme, but I'll try to mark the main changes in the changelog below.
+
+Also development and tests are done on ArcolinuxB, so it likely that distro would automatically satisfy most if not all dependencies.
 
 
 # Screenshots
@@ -36,7 +38,7 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 - ~~Remove dependency on rofi-themes~~
 - ~~A better tag module~~
 - ~~Fallback fonts~~
-- ~~Volume slider (arco leftwm)~~
+- ~~Volume slider (using volumeicon)~~
 - Update screenshots
 - A better implementation for powermenu
 - A better keymap implementation
@@ -45,58 +47,55 @@ Amber was done in a couple of days without any prior experience on LeftWM themin
 
 # Dependencies
 
-- [leftwm](https://github.com/leftwm/leftwm)
+- [leftwm](https://github.com/leftwm/leftwm) - duh
+
+Run by *up* script
+
 - polybar
-- dmenu 
 - feh
-- [rofi](https://github.com/davatorium/rofi) 
-- [picom by ibhagwan](https://github.com/ibhagwan/picom)
-- [nerd fonts](https://www.nerdfonts.com/)
-- betterlockscreen
-- pulseaudio
-- pavucontrol
 - nm-applet
 - pamac
 - xfce4-power-manager
 - numlockx
 - blueberry
 - volumeicon
+- [picom by ibhagwan](https://github.com/ibhagwan/picom)
 
+Run by polybar (and keybindings)
+
+- dmenu 
+- pavucontrol
+- [rofi](https://github.com/davatorium/rofi) 
+- betterlockscreen
+
+Misc
+
+- [nerd fonts](https://www.nerdfonts.com/), mainly SauceCodePro Nerd Font
 - notify-send
-
-Optionally
-- scrot
-- viewnior
-- lxapperance
 
 
 # Installation
 1. Install all required dependencies
 
-2. Clone the repository
+2. Clone the repository in ~/.config/leftwm/themes
 
 ```BASH
+cd ~/.config/leftwm/themes
 git clone https://github.com/di-effe/amber.git
 ```
 
-3. Make a copy of this project in your themes folder
-
-```BASH
-cp -r ./amber ~/.config/leftwm/themes
-```
-
-4. Remove the symlink to your current theme if set
+3. Remove the symlink to your current theme if set
 
 ```BASH
 rm ~/.config/leftwm/themes/current
 ```
-5. Set this as your current theme
+4. Set this as your current theme
 
 ```BASH
 ln -s ~/.config/leftwm/themes/amber ~/.config/leftwm/themes/current
 ```
 
-6. Restart your window manager
+5. Restart your window manager
 
 ```Default shortcut
 $MOD + Shift + r
