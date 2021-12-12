@@ -43,7 +43,10 @@ xfce4-power-manager &
 numlockx on &
 blueberry-tray &
 volumeicon &
+
+# notifications
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
+#dunst &
 
 # picom or compton (if it exists)
 if [ -x "$(command -v picom)" ]; then
