@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-# [ SETTINGS ] ################################################
+# [ SETTINGS ] ###############################################################
 # - CHOSE STATUS BAR
 # 0) polybar
 # 1) lemonbar (not yet ready)
@@ -9,12 +9,13 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # 3) yambar (not yet ready)
 # 4) lesbar (not yet ready)
 STATUSBAR=0
-###############################################################
+##############################################################################
 
 
 
 
-# [ BASIC ] ###################################################
+
+# [ BASIC ] ##################################################################
 # down the last running theme
 if [ -f "/tmp/leftwm-theme-down" ]; then
     /tmp/leftwm-theme-down
@@ -24,12 +25,12 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
 # set the theme.toml config
 echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
-###############################################################
+##############################################################################
 
 
 
 
-# [ RUN STUFF ] ###############################################
+# [ RUN STUFF ] ##############################################################
 # keybindings daemon (if it exist)
 if [ -x "$(command -v sxhkd)" ]; then
     sxhkd -c ~/.config/leftwm/sxhkd/sxhkdrc &
@@ -51,15 +52,15 @@ if [ -x "$(command -v picom)" ]; then
 elif [ -x "$(command -v compton)" ]; then
   compton --config $HOME/.config/leftwm/themes/current/compton.conf &> /dev/null &
 fi
-###############################################################
+##############################################################################
 
 
 
 
-# [ WALLPAPERS ] ##############################################
+# [ WALLPAPERS ] #############################################################
 # - Comment/uncomment the option you prefer
 
-# 1) START - set random wallpapers --------------------------------------------+
+# 1) START - set random wallpapers -----------------------------------------+
 #if [ -x "$(command -v feh)" ]; then
 #  feh --randomize --bg-fill "$SCRIPTPATH"/wallpapers/*
 #fi
@@ -81,14 +82,14 @@ if [ -x "$(command -v feh)" ]; then
   "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-arch3.png
 fi
 # END ----------------------------------------------------------------------+
-###############################################################
+##############################################################################
 
 
 
 
 
 
-# [ KEYMAP ] ##################################################
+# [ KEYMAP ] #################################################################
 KEYBINDINGS=/tmp/leftwm-keybindings
 if [ -f "$KEYBINDINGS" ]; then
     rm $KEYBINDINGS
@@ -110,13 +111,13 @@ sed -e "s/modifier: //g;s/key: //;s/value: None//;s/value: Some(//;s/)//;s/modke
 awk -F, '{print $3","$4","$1","$2}' | \
 column -s ',' -t \
 > $KEYMAP
-###############################################################
+##############################################################################
 
 
 
 
 
-# [ START STATUSBAR ] ##########################################
+# [ START STATUSBAR ] #########################################################
 case $STATUSBAR in
 
   0)
@@ -134,6 +135,6 @@ case $STATUSBAR in
     ;;
 
 esac
-###############################################################
+##############################################################################
 
 
