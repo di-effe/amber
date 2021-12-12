@@ -45,7 +45,6 @@ blueberry-tray &
 volumeicon &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-
 # picom or compton (if it exists)
 if [ -x "$(command -v picom)" ]; then
   picom --config $HOME/.config/leftwm/themes/current/picom.conf &> /dev/null &

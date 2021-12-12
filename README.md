@@ -20,6 +20,9 @@ Also development and tests are done on ArcolinuxB, so it likely that distro woul
 
 # Changelog
 
+## v0.1.2
+- Minor improvements here and there
+
 ## v0.1.1
 - Removed dependency from rofi-themes for applcation launcher
 - Removed dependency from rofi-themes for powermenu
@@ -40,10 +43,13 @@ Also development and tests are done on ArcolinuxB, so it likely that distro woul
 - ~~Fallback fonts~~
 - ~~Volume slider (using volumeicon)~~
 - Update screenshots
+- Polybar modules config as PeterDauwe
 - A better implementation for powermenu
 - A better keymap implementation
 - Experimenting with eww 
 - Experimenting with lemonbar
+- Experimenting with yambar
+- Experimenting with lesbar
 
 # Dependencies
 
