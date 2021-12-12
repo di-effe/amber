@@ -131,7 +131,7 @@ case $STATUSBAR in
     do 
       barname="mainbar$index"
       monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
-      monitor=$monitor width=$(( width - 16 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
+      monitor=$monitor width=$(( width - 0 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
       index=$((index+1))
     done
     ;;
