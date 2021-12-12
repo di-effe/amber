@@ -18,6 +18,7 @@ pkill pamac-tray
 pkill xfce4-power-manager
 pkill blueberry-tray
 pkill volumeicon
+pkill xfce4-notifyd
 
 
 # Remove temp files

@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-# Start notification daemon
-/usr/lib/notification-daemon-1.0/notification-daemon &
+# [ SETTINGS ] ################################################
+# - CHOSE STATUS BAR
+# 0) polybar
+# 1) lemonbar (not yet ready)
+# 2) eww (not yet ready)
+# 3) yambar (not yet ready)
+# 4) lesbar (not yet ready)
+STATUSBAR=0
+###############################################################
 
 
+
+
+# [ BASIC ] ###################################################
 # down the last running theme
 if [ -f "/tmp/leftwm-theme-down" ]; then
     /tmp/leftwm-theme-down
@@ -12,13 +22,18 @@ if [ -f "/tmp/leftwm-theme-down" ]; then
 fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
+# set the theme.toml config
+echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+###############################################################
 
 
-# keybindings daemon if exist 
+
+
+# [ RUN STUFF ] ###############################################
+# keybindings daemon (if it exist)
 if [ -x "$(command -v sxhkd)" ]; then
     sxhkd -c ~/.config/leftwm/sxhkd/sxhkdrc &
 fi
-
 
 # apps
 nm-applet &
@@ -27,43 +42,38 @@ xfce4-power-manager &
 numlockx on &
 blueberry-tray &
 volumeicon &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 
-# Boot picom or compton if it exists
+# picom or compton (if it exists)
 if [ -x "$(command -v picom)" ]; then
   picom --config $HOME/.config/leftwm/themes/current/picom.conf &> /dev/null &
-  #picom --config $HOME/.config/leftwm/themes/current/picom.conf --experimental-backends &> /dev/null &
-  #picom &> /dev/null &
-  #picom --experimental-backends &> /dev/null &
 elif [ -x "$(command -v compton)" ]; then
   compton --config $HOME/.config/leftwm/themes/current/compton.conf &> /dev/null &
 fi
-
-
-# set the theme.toml config
-echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+###############################################################
 
 
 
 
-# WALLPAPERS
+# [ WALLPAPERS ] ##############################################
 # - Comment/uncomment the option you prefer
 
-# START - set random wallpapers --------------------------------------------+
+# 1) START - set random wallpapers --------------------------------------------+
 #if [ -x "$(command -v feh)" ]; then
 #  feh --randomize --bg-fill "$SCRIPTPATH"/wallpapers/*
 #fi
 # END ----------------------------------------------------------------------+
 
 
-# START - set ONE wallpaper for all displays ----------------------------+
+# 2) START - set ONE wallpaper for all displays ----------------------------+
 #if [ -x "$(command -v feh)" ]; then
 #  feh --bg-fill "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-simple-lines.png
 #fi
 # END ----------------------------------------------------------------------+
 
 
-# START - set MULTIPLE wallpapers for all displays ----------------------+
+# 3) START - set MULTIPLE wallpapers for all displays ----------------------+
 # NOTE: the last image path DO NOT end with "\"
 if [ -x "$(command -v feh)" ]; then
   feh --bg-fill \
@@ -71,24 +81,14 @@ if [ -x "$(command -v feh)" ]; then
   "$SCRIPTPATH"/wallpapers/atlas-ark-gruvbox-arch3.png
 fi
 # END ----------------------------------------------------------------------+
+###############################################################
 
 
 
-# set displays and start polybar
-index=0
-monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
-leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | \
-while read -r width x y
-do 
-  barname="mainbar$index"
-  monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
-  monitor=$monitor width=$(( width - 16 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
-  index=$((index+1))
-done
 
 
-# KEYMAP
 
+# [ KEYMAP ] ##################################################
 KEYBINDINGS=/tmp/leftwm-keybindings
 if [ -f "$KEYBINDINGS" ]; then
     rm $KEYBINDINGS
@@ -110,3 +110,30 @@ sed -e "s/modifier: //g;s/key: //;s/value: None//;s/value: Some(//;s/)//;s/modke
 awk -F, '{print $3","$4","$1","$2}' | \
 column -s ',' -t \
 > $KEYMAP
+###############################################################
+
+
+
+
+
+# [ START STATUSBAR ] ##########################################
+case $STATUSBAR in
+
+  0)
+    # set displays and start polybar
+    index=0
+    monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
+    leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | \
+    while read -r width x y
+    do 
+      barname="mainbar$index"
+      monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
+      monitor=$monitor width=$(( width - 16 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
+      index=$((index+1))
+    done
+    ;;
+
+esac
+###############################################################
+
+
