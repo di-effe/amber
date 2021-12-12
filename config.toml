@@ -31,7 +31,7 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "rofi -show drun -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi"
+value = "rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi"
 modifier = ["modkey"]
 key = "space"
 
