@@ -8,7 +8,7 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # 2) eww (not yet ready)
 # 3) yambar (not yet ready)
 # 4) lesbar (not yet ready)
-STATUSBAR=0
+STATUSBAR=1
 ##############################################################################
 
 
@@ -37,22 +37,18 @@ if [ -x "$(command -v sxhkd)" ]; then
 fi
 
 # apps
-nm-applet &
-pamac-tray &
-xfce4-power-manager &
 numlockx on &
-blueberry-tray &
-volumeicon &
 
 # notifications
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
-#dunst &
+if [ -x "$(command -v dunst)" ]; then
+  dunst -config ~/.config/leftwm/themes/current/conf/dunst.config &
+fi
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-# picom or compton (if it exists)
+
+# picom (if it exists)
 if [ -x "$(command -v picom)" ]; then
-  picom --config $HOME/.config/leftwm/themes/current/picom.conf &> /dev/null &
-elif [ -x "$(command -v compton)" ]; then
-  compton --config $HOME/.config/leftwm/themes/current/compton.conf &> /dev/null &
+  picom --config $HOME/.config/leftwm/themes/current/conf/picom.config &> /dev/null &
 fi
 ##############################################################################
 
@@ -123,7 +119,8 @@ column -s ',' -t \
 case $STATUSBAR in
 
   0)
-    # set displays and start polybar
+    pkill polybar &
+    pkill lemonbar &
     index=0
     monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
     leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | \
@@ -132,7 +129,21 @@ case $STATUSBAR in
       barname="mainbar$index"
       monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
       monitor=$monitor width=$(( width - 0 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
-      index=$((index+1))
+      let index=index+1
+    done
+    ;;
+
+  1)
+    pkill lemonbar &
+    pkill polybar &
+    index=0
+    barheight=30
+    lemonbar_content=""
+    leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x y
+    do 
+      leftwm-state -w $index -t $SCRIPTPATH/lemonbar.liquid | lemonbar -g "$width"x"$barheight"+"$x" -f "Iosevka Nerd Font"-11 -B"#1e1f29" -F"#f8f8f2" -u 2 -U"#ffb300"| sh& 
+      lemonbar -g "$width"x2+$x+$barheight --B"#ffb300" -p&   
+      let index=index+1
     done
     ;;
 

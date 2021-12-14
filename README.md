@@ -4,21 +4,31 @@
 
 # Disclaimer
 At the moment Amber is more like a rolling-release-theme, but I'll try to mark the main changes in the changelog below.
-
 Also development and tests are done on ArcolinuxB, so that distro would likely satisfy most if not all dependencies automatically.
 
 
+# Features
+: multi monitor support
+: multiple statusbar options
+
 # Screenshots
 
+==Polybar==
 ![Desktop](./screenshots/amber_desktop.png)
 ![Desktop](./screenshots/amber_tiles.png)
 ![Desktop](./screenshots/amber_apps.png)
 ![Desktop](./screenshots/amber_powermenu.png)
 ![Desktop](./screenshots/amber_keymap.png)
- 
-
+==Lemonbar== 
+![Desktop](./screenshots/amber_desktop_lemonbar.png)
 
 # Changelog
+
+## v0.2.0
+- Lot of changes in polybar config and look
+- Polybar modules (wlan, bluetooth, pulseaudio-control, arch/aur updates)
+- Systray disabled by default
+- Basic lemonbar implementation
 
 ## v0.1.2
 - Minor improvements here and there
@@ -27,8 +37,8 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - Removed dependency from rofi-themes for applcation launcher
 - Removed dependency from rofi-themes for powermenu
 
-## v0.1
-- Dual monitor support
+## v0.1.0
+- Multi monitor support
 - Amber color scheme
 - Powermenu and application launcher (rofi-themes with some small tweaks)
 - Picom conf for rounded corners and transparency for inactive windows
@@ -38,46 +48,52 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 
 
 ## To do
-- ~~Remove dependency on rofi-themes~~
-- ~~A better tag module~~
-- ~~Fallback fonts~~
-- ~~Volume slider (using volumeicon)~~
-- ~~Update screenshots~~
-- ~~Polybar modules config as PeterDauwe~~
-- A better implementation for powermenu
-- A better keymap implementation
-- Experimenting with eww 
-- Experimenting with lemonbar
-- Experimenting with yambar
-- Experimenting with lesbar
+- [x] Remove dependency on rofi-themes
+- [x] A better tag module
+- [x] Fallback fonts
+- [x] Volume slider (using volumeicon)
+- [x] Modular polybar config
+- [x] Basic lemonbar implementation
+- [ ] Lemonbar modules implementation
+- [ ] A better implementation for powermenu
+- [ ] A better keymap implementation
+- [ ] eww statusbar
+- [ ] yambar statusbar
+- [ ] lesbar statusbar
 
 # Dependencies
 
 - [leftwm](https://github.com/leftwm/leftwm) - duh
 
-Run by *up* script
+`Fonts`
+- Iosevka Nerd Font
+- Roboto
+- Noto Sans
+- FontAwesome
+In general it might be a good idea to install all [nerd fonts](https://www.nerdfonts.com/).
 
-- polybar
+`Run by *up* script`
+
+- polybar / lemonbar
 - feh
-- nm-applet
-- pamac
-- xfce4-power-manager
 - numlockx
-- blueberry
-- volumeicon
-- picom
+- picom     
 
-Run by polybar (and keybindings)
+`Run by polybar (and keybindings)`
 
 - dmenu 
-- pavucontrol
 - [rofi](https://github.com/davatorium/rofi) 
+- [PulseAudio Control](https://github.com/marioortizmanero/polybar-pulseaudio-control)
+- pavucontrol
+- nm-connection-editor
 - betterlockscreen
+- blueberry
+- pamac
 
-Misc
-
-- [nerd fonts](https://www.nerdfonts.com/), mainly SauceCodePro Nerd Font
-- notify-send
+`Misc`
+- alacritty (or change configs to match your terminal emulator)
+- dunst / xfce4-notifyd  (adapt *up* script accordingly)
+- [paper-icon-theme](https://github.com/snwh/paper-icon-theme)
 
 
 # Installation
@@ -111,12 +127,63 @@ $MOD + Shift + r
 Polybar is configured with an application launcher (left side) and a powermenu (right side). Both require **rofi** to be installed on your system, if you want to use them.
 
 
-# Configuration
+# Statusbar selection
+
+By default Amber is running with a modular polybar configuration, but you can edit the ==up== script to pick from:
+
+```
+# [ SETTINGS ] ###############################################################
+# - CHOSE STATUS BAR
+# 0) polybar
+# 1) lemonbar (very basic implementation with app launcher, tags and powermenu)
+# 2) eww (not yet ready)
+# 3) yambar (not yet ready)
+# 4) lesbar (not yet ready)
+STATUSBAR=0
+##############################################################################
+```
+
+# Configuration (Polybar)
+
+## Pulseaudio Control
+This is an interesting module you might want to install.
+Just keep in mind it will grab your device description from
+
+```
+pactl list sinks | grep device.description
+```
+
+and that might not be very short.
+The pulseaudio-control module in *polybar.modules* has been configured to use fancier nicknames for speakers and headphone, but you have to replace mine values with yours.
+
+For speakers (without any wired or bluetooth headphone connected) check
+```
+pactl list sinks short | cut -f2
+```
+
+and use the out here
+```
+--sink-nickname "VALUE_DETECTED_HERE:蓼 Speakers" 
+```
+
+For wired headphones, plug them, check again
+```
+pactl list sinks short | cut -f2
+```
+
+and use the out here
+```
+--sink-nickname "VALUE_DETECTED_HER: Headphones"
+```
+
+
 
 ## Systray
-Using polybar you'll find that systray is running in *detached* mode on the left of the power menu.
-At the moment its X position is configured in **polybar.conf** with a negative **tray-offset-x** value, but it's not an ideal solution because if you need to add modules on the right, close to the powerbutton, you'll also need to increase the negative X position.
-
+Systray has beed disabled by default in *polybar.conig*
+```
+tray-position = none
+```
+If you want to use it change position and adjust the **tray-offset-x** value.
 
 
 ## Keymap
@@ -214,7 +281,7 @@ And some inspiration / patches taken from these wonderful sources:
 
 - Candy from Arcolinux team.
 
-- Polybar modules configuration style (plus snippets and scripts) from [Peter Dauwe](https://github.com/PeterDauwe)
+- Polybar modules configuration style (plus snippets and scripts) from [Peter Dauwe](https://github.com/PeterDauwe) and [adi1090x](https://github.com/adi1090x/polybar-themes)
 
 Wallpapers by [Atlas-ark](https://www.reddit.com/user/atlas-ark/). I am not aware of any kind of licence, but if you can buy him a beer :)
 
