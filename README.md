@@ -72,7 +72,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - FontAwesome
 In general it might be a good idea to install all [nerd fonts](https://www.nerdfonts.com/).
 
-`Run by *up* script`
+`Run by up script`
 
 - polybar / lemonbar
 - feh
