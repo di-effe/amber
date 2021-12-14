@@ -146,14 +146,13 @@ STATUSBAR=0
 # Configuration (Polybar)
 
 ## Pulseaudio Control
-This is an interesting module you might want to install.
-Just keep in mind it will grab your device description from
+This is an interesting module you might want to use, just keep in mind it will grab your device description from
 
 ```
 pactl list sinks | grep device.description
 ```
 
-and that might not be very short.
+and that is usually a very long string.
 The pulseaudio-control module in *polybar.modules* has been configured to use fancier nicknames for speakers and headphone, but you have to replace mine values with yours.
 
 For speakers (without any wired or bluetooth headphone connected) check
