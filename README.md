@@ -63,7 +63,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 
 # Dependencies
 
-- [leftwm](https://github.com/leftwm/leftwm) - duh
+- [LeftWM](https://github.com/leftwm/leftwm) - duh
 
 `Fonts`
 - Iosevka Nerd Font
