@@ -13,13 +13,13 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 
 # Screenshots
 
-==Polybar==
+**Polybar**
 ![Desktop](./screenshots/amber_desktop.png)
 ![Desktop](./screenshots/amber_tiles.png)
 ![Desktop](./screenshots/amber_apps.png)
 ![Desktop](./screenshots/amber_powermenu.png)
 ![Desktop](./screenshots/amber_keymap.png)
-==Lemonbar== 
+**Lemonbar** 
 ![Desktop](./screenshots/amber_desktop_lemonbar.png)
 
 # Changelog
@@ -129,7 +129,7 @@ Polybar is configured with an application launcher (left side) and a powermenu (
 
 # Statusbar selection
 
-By default Amber is running with a modular polybar configuration, but you can edit the ==up== script to pick from:
+By default Amber is running with a modular polybar configuration, but you can edit the **up** script to pick from:
 
 ```
 # [ SETTINGS ] ###############################################################
