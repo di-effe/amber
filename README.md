@@ -8,8 +8,8 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 
 
 # Features
-: multi monitor support
-: multiple statusbar options
+- multi monitor support
+- multiple statusbar options
 
 # Screenshots
 
