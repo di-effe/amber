@@ -51,7 +51,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - [x] Remove dependency on rofi-themes
 - [x] A better tag module
 - [x] Fallback fonts
-- [x] Volume slider (using volumeicon)
+- [x] ~~Volume slider (using volumeicon)~~(systray removed)
 - [x] Modular polybar config
 - [x] Basic lemonbar implementation
 - [ ] Lemonbar modules implementation
