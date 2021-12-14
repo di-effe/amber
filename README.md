@@ -1,5 +1,5 @@
 # Amber
-*A [leftwm](https://github.com/leftwm/leftwm) minimalistic theme with very few gadgets, widgets and modules*
+*A [LeftWM](https://github.com/leftwm/leftwm) minimalistic theme with very few gadgets, widgets and modules*
 
 
 # Disclaimer
