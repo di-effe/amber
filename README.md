@@ -1,3 +1,26 @@
+- [Amber](#amber)
+- [Disclaimer](#disclaimer)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Changelog](#changelog)
+  - [v0.2.0](#v020)
+  - [v0.1.2](#v012)
+  - [v0.1.1](#v011)
+  - [v0.1.0](#v010)
+  - [To do](#to-do)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Statusbar selection](#statusbar-selection)
+- [Configuration (Polybar)](#configuration-polybar)
+  - [Pulseaudio Control](#pulseaudio-control)
+  - [Systray](#systray)
+  - [Keymap](#keymap)
+  - [dmenu](#dmenu)
+  - [Layout module](#layout-module)
+  - [Wallpapers](#wallpapers)
+- [Credit / Sources](#credit--sources)
+
+
 # Amber
 *A [LeftWM](https://github.com/leftwm/leftwm) minimalistic theme with very few gadgets, widgets and modules*
 
