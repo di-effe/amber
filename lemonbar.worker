@@ -1,0 +1,72 @@
+#!/bin/sh
+
+# README
+# Wifi: Replace wlan interface (wlp5s0) with your own (use iwconfig to check)
+
+
+center="%{c}"
+right="%{r}"
+spacer_dot="%{F#757575}·%{F-}"
+
+Launcher(){
+    LAUNCHER="%{A1:rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi :}%{B#ffb300}%{F#1e1f29}    %{F-}%{B-} %{A}" 
+    echo -e -n "${LAUNCHER}" 
+}
+
+Tags(){
+    W="$1"
+    TAGS="$(leftwm-state -q -t ~/.config/leftwm/themes/current/lemonbar.tags.liquid -w $W)"
+    echo -e -n "${TAGS}" 
+}
+
+Sound(){
+	NOTMUTED=$( amixer sget Master | grep "\[on\]" )
+	if [[ ! -z $NOTMUTED ]] ; then
+		VOL=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master) | sed 's/%//g')
+		if [ $VOL -ge 85 ] ; then
+			echo -e "\uf028 ${VOL}%"
+		elif [ $VOL -ge 50 ] ; then
+			echo -e "\uf027 ${VOL}%"
+		else
+			echo -e "\uf026 ${VOL}%"
+		fi
+	else
+		echo -e "\uf026 M"
+	fi
+}
+
+Clock(){
+    TIME="$(date "+%d %b %H:%M")"
+    echo -e -n "${TIME}" 
+}
+
+Wifi(){
+	WIFISTR=$( iwconfig wlp5s0 | grep "Link" | sed 's/ //g' | sed 's/LinkQuality=//g' | sed 's/\/.*//g')
+	if [ ! -z $WIFISTR ] ; then
+		WIFISTR=$(( ${WIFISTR} * 100 / 70))
+		#ESSID=$(iwconfig wlp5s0 | grep ESSID | sed 's/ //g' | sed 's/.*://' | cut -d "\"" -f 2)
+		if [ $WIFISTR -ge 1 ] ; then
+			echo -e "\uf1eb ${WIFISTR}%"
+		fi
+	fi
+}
+
+
+Powermenu(){
+    POWERMENU="%{A1:~/.config/leftwm/themes/current/rofi/powermenu.sh :}%{B#ffb300}%{F#1e1f29}  襤  %{F-}%{B-}%{A}"
+    echo -e -n "${POWERMENU}" 
+}
+
+
+while true
+do
+    #launcher="%{A1:rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi :}%{B#ffb300}%{F#1e1f29}    %{F-}%{B-} %{A}"
+    #tags="$(leftwm-state -q -t ~/.config/leftwm/themes/current/lemonbar.tags.liquid -w $1)"
+    #datetime="$(date "+%d %b %H:%M")"
+    bluetooth="%{A1:~/.config/leftwm/themes/current/scripts/bluetooth_toggle.sh :}%{A3:blueberry :}$(~/.config/leftwm/themes/current/scripts/bluetooth.sh)%{A}%{A}"
+    #powermenu="%{A1:~/.config/leftwm/themes/current/rofi/powermenu.sh :}%{B#ffb300}%{F#1e1f29}  襤  %{F-}%{B-}%{A}"
+
+
+    echo -e "$(Launcher) $(Tags $1) $right $(Sound) $spacer_dot  $(Wifi) $bluetooth $spacer_dot $(Clock)  $(Powermenu)"
+	sleep 0.1s
+done

@@ -94,6 +94,7 @@ In general it might be a good idea to install all [nerd fonts](https://www.nerdf
 - alacritty (or change configs to match your terminal emulator)
 - dunst / xfce4-notifyd  (adapt *up* script accordingly)
 - [paper-icon-theme](https://github.com/snwh/paper-icon-theme)
+- iwconfig 
 
 
 # Installation
@@ -124,7 +125,7 @@ $MOD + Shift + r
 ```
 **!!! IMPORTANT !!!**
 
-Polybar is configured with an application launcher (left side) and a powermenu (right side). Both require **rofi** to be installed on your system, if you want to use them.
+Polybar is configured with an application launcher (left side) and a powermenu (right side). If you want to use them be sure to have **rofi** installed.
 
 
 # Statusbar selection
@@ -153,7 +154,7 @@ pactl list sinks | grep device.description
 ```
 
 and that is usually a very long string.
-The pulseaudio-control module in *polybar.modules* has been configured to use fancier nicknames for speakers and headphone, but you have to replace mine values with yours.
+The pulseaudio-control module in *polybar.modules* has been configured to use fancier nicknames for speakers and headphone, but you have to replace my values with yours.
 
 For speakers (without any wired or bluetooth headphone connected) check
 ```
