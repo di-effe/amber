@@ -161,7 +161,7 @@ For speakers (without any wired or bluetooth headphone connected) check
 pactl list sinks short | cut -f2
 ```
 
-and use the out here
+and use the output here
 ```
 --sink-nickname "VALUE_DETECTED_HERE:蓼 Speakers" 
 ```
@@ -171,7 +171,7 @@ For wired headphones, plug them, check again
 pactl list sinks short | cut -f2
 ```
 
-and use the out here
+and use the output here
 ```
 --sink-nickname "VALUE_DETECTED_HER: Headphones"
 ```
