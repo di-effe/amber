@@ -306,6 +306,7 @@ exec ~/.config/leftwm/themes/current/lemonbar.worker $index | lemonbar -g "$widt
 
 ## v0.2.1
 - Lemonbar experimental wrapper 
+- Color schemes
 
 **Notes**
 I did my best to implement a Lemonbar asynchronous wrapper able to provide different kind of information at different rates, but each and every attempt broke the clickable areas or the multi-monitor support. In the end I rolled back to a simple and inefficient solution. I will get back to it sooner or later. 
