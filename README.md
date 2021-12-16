@@ -57,7 +57,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - Lemonbar experimental wrapper 
 
 **Notes**
-I did my best to implement a Lemonbar asynchronous wapper able to provide different kind of information at different rates, but each and every attempt broke the clickable areas or the multi-monitor support. In the end I rolled back to a simple and inefficient solution. I will get back to it sooner or later. 
+I did my best to implement a Lemonbar asynchronous wrapper able to provide different kind of information at different rates, but each and every attempt broke the clickable areas or the multi-monitor support. In the end I rolled back to a simple and inefficient solution. I will get back to it sooner or later. 
 
 
 ## v0.2.0
