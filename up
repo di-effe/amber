@@ -19,7 +19,7 @@ STATUSBAR=0
 # - gruvbox
 # - nord
 # - catppuccin
-source $SCRIPTPATH/scripts/colors.sh catppuccin
+source $SCRIPTPATH/scripts/colors.sh amber
 ##############################################################################
 
 

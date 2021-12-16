@@ -1,14 +1,14 @@
 %{A1:rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi :}
-%{B#F0AFE1}%{F#1E1E28}    %{F-}%{B-} 
+%{B#FFB300}%{F#1E1F29}    %{F-}%{B-} 
 %{A}
 
 {% for tag in workspace.tags %}
 
 %{T1}
-{% if tag.mine %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#F0AFE1}%{+o}  {{tag.name}}  %{-o}%{F-}%{A}
-{% elsif tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#F0AFE1}  {{tag.name}}  %{F-}%{A}
-{% elsif tag.busy %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#C6AAE8}  {{tag.name}}  %{F-}%{A}
-{% else tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#A4B9EF}  {{tag.name}}  %{F-}%{A}
+{% if tag.mine %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#FFB300}%{+o}  {{tag.name}}  %{-o}%{F-}%{A}
+{% elsif tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#FFB300}  {{tag.name}}  %{F-}%{A}
+{% elsif tag.busy %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#E8BC0C}  {{tag.name}}  %{F-}%{A}
+{% else tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#F8F8F2}  {{tag.name}}  %{F-}%{A}
 {% endif %}
 %{T-}
 
@@ -16,5 +16,5 @@
 
 %{O20}
 %{A1:leftwm-command "NextLayout" :}%{A3:leftwm-command "PreviousLayout" :}
-%{B#F0AFE1}%{F#1E1E28} · {{ workspace.layout }} · %{F-}%{B-}
+%{B#FFB300}%{F#1E1F29} · {{ workspace.layout }} · %{F-}%{B-}
 %{A}%{A}

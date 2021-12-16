@@ -33,7 +33,7 @@ Volume(){
 
 
 Powermenu(){
-    POWERMENU='%{B#F0AFE1}%{F#1E1E28}%{A:~/.config/leftwm/themes/current/rofi/powermenu.sh :}  襤  %{A}%{F-}%{B-}'
+    POWERMENU='%{B#FFB300}%{F#1E1F29}%{A:~/.config/leftwm/themes/current/rofi/powermenu.sh :}  襤  %{A}%{F-}%{B-}'
     echo -e -n "${POWERMENU}" 
 }
 
