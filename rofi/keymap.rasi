@@ -1,45 +1,62 @@
+@import "colors.rasi"
+
 * {
-  background-color: #1e1f29;
-  border-color:  #ffb300;
-  text-color: #ffffff;
+  background-color:     @background;
+  border-color:         @primary;
+  text-color:           @foreground;
   spacing: 0;
 }
 
+configuration {
+	font:							    "Iosevka Nerd Font 10";
+}
+
+
+window {
+  transparency:         "real";
+  border-radius:        4px;
+  location:             center;
+	width:							  1200px;
+}
+
 inputbar {
-  border: 0 0 1px 0;
-  children: [prompt,entry];
+  border:               0 0 1px 0;
+  children:             [prompt,entry];
 }
 
 prompt {
-  padding: 10px;
-  background-color: #ffb300;
-  text-color: #333333;
-  font-weight: bold;
-  border: 0 1px 0 0;
+  padding:              10px;
+  background-color:     @primary;
+  text-color:           @background;
+  font-weight:          bold;
+  border:               0 1px 0 0;
 }
 
 textbox {
-  background-color: #2e343f;
-  border: 0 0 1px 0;
-  border-color: #282C33;
-  padding: 8px 16px;
+  padding:              8px 16px;
 }
 
 entry {
-  padding: 10px;
+  padding:              10px;
 }
 
 listview {
-  cycle: false;
-  margin: 0 0 -1px 0;
-  scrollbar: false;
+  cycle:                false;
+  margin:               0 0 -1px 0;
+  scrollbar:            false;
 }
 
 element {
-  border: 0;
-  padding: 5px;
+  border:               0;
+  padding:              5px;
+}
+
+element-text {
+  background-color: 		inherit;
+  text-color:       		inherit;
 }
 
 element selected {
-  background-color: #ffb300;
+  background-color:     @primary;
+  text-color:           @background;
 }

@@ -1,5 +1,7 @@
+@import "colors.rasi"
+
 configuration {
-	font:							"Comfortaa 30";
+	font:							"Iosevka Nerd Font 30";
     disable-history:            	false;
 	sidebar-mode: 					false;
 	show-icons:                     false;
@@ -7,17 +9,13 @@ configuration {
 
 
 * {
-	bg:								#212121;
-	bg-light:						#272727;
-	fg:								#bdbdbd;
-	button:							#ffb300;
-	background-color:				@bg;
-	text-color:						@fg;
+	background-color:				@background;
+	text-color:						@foreground;
 }
 
 window {
     transparency:                   "real";
-    border-radius:                  0px;
+    border-radius:                  4px;
     location:                       center;
 	width:							600px;
 }
@@ -38,8 +36,8 @@ mainbox {
 }
 
 element {
-    background-color:               @bg-light;
-    border-radius:                  5px;
+    background-color:               @background-light;
+    border-radius:                  4px;
 }
 
 element-text {
@@ -52,7 +50,7 @@ element-text {
 }
 
 element selected {
-	text-color: 					@bg;
-	background-color:               @button;
-	border-radius:                  5px;
+	text-color: 					@background;
+	background-color:               @primary;
+	border-radius:                  4px;
 }

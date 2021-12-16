@@ -1,14 +1,10 @@
 {% for tag in workspace.tags %}
 
 %{T1}
-{% if tag.mine %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#ffb300}%{+o}  {{tag.name}}  %{-o}%{F-}%{A}
-{% elsif tag.visible  %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#ffb300}  {{tag.name}}  %{F-}%{A}
-{% elsif tag.busy  %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#E8BC0C}  {{tag.name}}  %{F-}%{A}
-{% else tag.visible  %}
-%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#f8f8f2}  {{tag.name}}  %{F-}%{A}
+{% if tag.mine %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#F0AFE1}%{+o}  {{tag.name}}  %{-o}%{F-}%{A}
+{% elsif tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#F0AFE1}  {{tag.name}}  %{F-}%{A}
+{% elsif tag.busy %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#C6AAE8}  {{tag.name}}  %{F-}%{A}
+{% else tag.visible %}%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}%{F#A4B9EF}  {{tag.name}}  %{F-}%{A}
 {% endif %}
 %{T-}
 
@@ -17,8 +13,6 @@
 %{T1}
 %{O20}
 %{A1:leftwm-command "NextLayout" :}%{A3:leftwm-command "PreviousLayout" :}
-%{B#ffb300}
-%{F#1e1f29} · {{ workspace.layout }} · %{F-}
-%{B-}
+%{B#F0AFE1}%{F#1E1E28} · {{ workspace.layout }} · %{F-}%{B-}
 %{A}%{A}
 %{T-}

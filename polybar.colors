@@ -7,11 +7,11 @@
 
 [color]
 ;; Main colors
-background = #1e1f29
-foreground = #f8f8f2
-foreground-alt = #9C9C9C
-primary = #ffb300
-secondary = #E8BC0C
+background = #1E1E28
+foreground = #A4B9EF
+;;foreground-alt = #9C9C9C
+primary = #F0AFE1
+secondary = #C6AAE8
 alternate = #FFE70D
 
 trans = #00000000

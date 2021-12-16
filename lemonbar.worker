@@ -1,7 +1,7 @@
 #!/bin/sh
 
 Dot(){
-	DOT="%{F#757575}·%{F-} " 
+	DOT='%{F#757575}·%{F-}'
 	echo -e -n "${DOT}" 
 }
 
@@ -33,7 +33,7 @@ Volume(){
 
 
 Powermenu(){
-    POWERMENU="%{B#ffb300}%{F#1e1f29}%{A:~/.config/leftwm/themes/current/rofi/powermenu.sh :}  襤  %{A}%{F-}%{B-}"
+    POWERMENU='%{B#F0AFE1}%{F#1E1E28}%{A:~/.config/leftwm/themes/current/rofi/powermenu.sh :}  襤  %{A}%{F-}%{B-}'
     echo -e -n "${POWERMENU}" 
 }
 

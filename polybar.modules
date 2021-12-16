@@ -385,6 +385,6 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-padding = 0
-label-connected = "%{A1:nm-connection-editor:}%{A}"
+label-connected = "%{A1:nm-connection-editor:}直 %{A}"
 
 

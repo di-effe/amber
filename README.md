@@ -2,15 +2,9 @@
 - [Disclaimer](#disclaimer)
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Changelog](#changelog)
-  - [v0.2.1](#v021)
-  - [v0.2.0](#v020)
-  - [v0.1.2](#v012)
-  - [v0.1.1](#v011)
-  - [v0.1.0](#v010)
-  - [To do](#to-do)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
+- [Color schemes](#color-schemes)
 - [Statusbar selection](#statusbar-selection)
 - [Configuration](#configuration)
   - [General](#general)
@@ -22,6 +16,13 @@
     - [Systray](#systray)
     - [Layout module](#layout-module)
   - [Lemonbar](#lemonbar)
+- [Changelog](#changelog)
+  - [v0.2.1](#v021)
+  - [v0.2.0](#v020)
+  - [v0.1.2](#v012)
+  - [v0.1.1](#v011)
+  - [v0.1.0](#v010)
+  - [To do](#to-do)
 - [Credit / Sources](#credit--sources)
 
 
@@ -37,6 +38,9 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 # Features
 - multi monitor support
 - multiple statusbar options
+- color schemes
+
+![Desktop](./screenshots/colors.png)
 
 # Screenshots
 
@@ -51,51 +55,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 **Lemonbar (experimental wrapper)** 
 ![Desktop](./screenshots/amber_desktop_lemonbar_experimental.png)
 
-# Changelog
 
-## v0.2.1
-- Lemonbar experimental wrapper 
-
-**Notes**
-I did my best to implement a Lemonbar asynchronous wrapper able to provide different kind of information at different rates, but each and every attempt broke the clickable areas or the multi-monitor support. In the end I rolled back to a simple and inefficient solution. I will get back to it sooner or later. 
-
-
-## v0.2.0
-- Lot of changes in polybar config and look
-- Polybar modules (wlan, bluetooth, pulseaudio-control, arch/aur updates)
-- Systray disabled by default
-- Basic lemonbar implementation
-
-## v0.1.2
-- Minor improvements here and there
-
-## v0.1.1
-- Removed dependency from rofi-themes for applcation launcher
-- Removed dependency from rofi-themes for powermenu
-
-## v0.1.0
-- Multi monitor support
-- Amber color scheme
-- Powermenu and application launcher (rofi-themes with some small tweaks)
-- Picom conf for rounded corners and transparency for inactive windows
-- Polybar modules to show and rotate layouts (left click next, right click previous)
-- template.liquid config to show and rotate layouts (left click next, right click previous) 
-- Keymap
-
-
-## To do
-- [x] Remove dependency on rofi-themes
-- [x] A better tag module
-- [x] Fallback fonts
-- [x] ~~Volume slider (using volumeicon)~~(systray removed)
-- [x] Modular polybar config
-- [x] Basic lemonbar implementation
-- [x] Lemonbar modules implementation (kinda)
-- [ ] A better implementation for powermenu
-- [ ] A better keymap implementation
-- [ ] eww statusbar
-- [ ] yambar statusbar
-- [ ] lesbar statusbar
 
 # Dependencies
 
@@ -167,6 +127,22 @@ $MOD + Shift + r
 
 Polybar is configured with an application launcher (left side) and a powermenu (right side). If you want to use them be sure to have **rofi** installed.
 
+# Color schemes
+
+Amber now comes with different color schemes, to better suit your mood or overall theme settings!
+Edit your **up** script and chose:
+
+```
+# [ COLOR SCHEME ] ###########################################################
+# Available themes:
+# - amber
+# - catppuccin
+# - dracula
+# - gruvbox
+# - nord
+source $SCRIPTPATH/scripts/colors.sh amber
+##############################################################################
+```
 
 # Statusbar selection
 
@@ -324,6 +300,53 @@ exec ~/.config/leftwm/themes/current/lemonbar.worker $index | lemonbar -g "$widt
 **Classic/simple mode** will only parse what is configured inside *lemonbar.liquid*.
 
 **Experimental mode** is an attempt to merge a liquid template, in this case *lemonbar.experimental.liquid*, with other simple info module like clock and volume. The core of this mode is the **lemonbar.worker** script.
+
+
+# Changelog
+
+## v0.2.1
+- Lemonbar experimental wrapper 
+
+**Notes**
+I did my best to implement a Lemonbar asynchronous wrapper able to provide different kind of information at different rates, but each and every attempt broke the clickable areas or the multi-monitor support. In the end I rolled back to a simple and inefficient solution. I will get back to it sooner or later. 
+
+
+## v0.2.0
+- Lot of changes in polybar config and look
+- Polybar modules (wlan, bluetooth, pulseaudio-control, arch/aur updates)
+- Systray disabled by default
+- Basic lemonbar implementation
+
+## v0.1.2
+- Minor improvements here and there
+
+## v0.1.1
+- Removed dependency from rofi-themes for applcation launcher
+- Removed dependency from rofi-themes for powermenu
+
+## v0.1.0
+- Multi monitor support
+- Amber color scheme
+- Powermenu and application launcher (rofi-themes with some small tweaks)
+- Picom conf for rounded corners and transparency for inactive windows
+- Polybar modules to show and rotate layouts (left click next, right click previous)
+- template.liquid config to show and rotate layouts (left click next, right click previous) 
+- Keymap
+
+
+## To do
+- [x] Remove dependency on rofi-themes
+- [x] A better tag module
+- [x] Fallback fonts
+- [x] ~~Volume slider (using volumeicon)~~(systray removed)
+- [x] Modular polybar config
+- [x] Basic lemonbar implementation
+- [x] Lemonbar modules implementation (kinda)
+- [ ] A better implementation for powermenu
+- [ ] A better keymap implementation
+- [ ] eww statusbar
+- [ ] yambar statusbar
+- [ ] lesbar statusbar
 
 
 # Credit / Sources
