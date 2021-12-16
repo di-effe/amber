@@ -322,6 +322,7 @@ exec ~/.config/leftwm/themes/current/lemonbar.worker $index | lemonbar -g "$widt
 ```
 
 **Classic/simple mode** will only parse what is configured inside *lemonbar.liquid*.
+
 **Experimental mode** is an attempt to merge a liquid template, in this case *lemonbar.experimental.liquid*, with other simple info module like clock and volume. The core of this mode is the **lemonbar.worker** script.
 
 
