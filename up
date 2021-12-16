@@ -8,7 +8,7 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # 2) eww (not yet ready)
 # 3) yambar (not yet ready)
 # 4) lesbar (not yet ready)
-STATUSBAR=1
+STATUSBAR=0
 ##############################################################################
 
 
