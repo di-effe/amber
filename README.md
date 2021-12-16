@@ -3,6 +3,7 @@
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Changelog](#changelog)
+  - [v0.2.1](#v021)
   - [v0.2.0](#v020)
   - [v0.1.2](#v012)
   - [v0.1.1](#v011)
@@ -11,13 +12,16 @@
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Statusbar selection](#statusbar-selection)
-- [Configuration (Polybar)](#configuration-polybar)
-  - [Pulseaudio Control](#pulseaudio-control)
-  - [Systray](#systray)
-  - [Keymap](#keymap)
-  - [dmenu](#dmenu)
-  - [Layout module](#layout-module)
-  - [Wallpapers](#wallpapers)
+- [Configuration](#configuration)
+  - [General](#general)
+    - [Wallpapers](#wallpapers)
+    - [Keymap](#keymap)
+    - [dmenu](#dmenu)
+  - [Polybar](#polybar)
+    - [Pulseaudio Control](#pulseaudio-control)
+    - [Systray](#systray)
+    - [Layout module](#layout-module)
+  - [Lemonbar](#lemonbar)
 - [Credit / Sources](#credit--sources)
 
 
@@ -42,10 +46,19 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 ![Desktop](./screenshots/amber_apps.png)
 ![Desktop](./screenshots/amber_powermenu.png)
 ![Desktop](./screenshots/amber_keymap.png)
-**Lemonbar** 
+**Lemonbar (basic liquid implementation)** 
 ![Desktop](./screenshots/amber_desktop_lemonbar.png)
+**Lemonbar (experimental wrapper)** 
+![Desktop](./screenshots/amber_desktop_lemonbar_experimental.png)
 
 # Changelog
+
+## v0.2.1
+- Lemonbar experimental wrapper 
+
+**Notes**
+I did my best to implement a Lemonbar asynchronous wapper able to provide different kind of information at different rates, but each and every attempt broke the clickable areas or the multi-monitor support. In the end I rolled back to a simple and inefficient solution. I will get back to it sooner or later. 
+
 
 ## v0.2.0
 - Lot of changes in polybar config and look
@@ -77,7 +90,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - [x] ~~Volume slider (using volumeicon)~~(systray removed)
 - [x] Modular polybar config
 - [x] Basic lemonbar implementation
-- [ ] Lemonbar modules implementation
+- [x] Lemonbar modules implementation (kinda)
 - [ ] A better implementation for powermenu
 - [ ] A better keymap implementation
 - [ ] eww statusbar
@@ -93,6 +106,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - Roboto
 - Noto Sans
 - FontAwesome
+
 In general it might be a good idea to install all [nerd fonts](https://www.nerdfonts.com/).
 
 `Run by up script`
@@ -112,6 +126,9 @@ In general it might be a good idea to install all [nerd fonts](https://www.nerdf
 - betterlockscreen
 - blueberry
 - pamac
+
+`Run by lemonbar`
+- iwconfig
 
 `Misc`
 - alacritty (or change configs to match your terminal emulator)
@@ -167,49 +184,21 @@ STATUSBAR=0
 ##############################################################################
 ```
 
-# Configuration (Polybar)
+# Configuration 
 
-## Pulseaudio Control
-This is an interesting module you might want to use, just keep in mind it will grab your device description from
+## General
 
-```
-pactl list sinks | grep device.description
-```
+### Wallpapers
 
-and that is usually a very long string.
-The pulseaudio-control module in *polybar.modules* has been configured to use fancier nicknames for speakers and headphone, but you have to replace my values with yours.
+*up* is configured with the options to
+- set random wallpapers from the /wallpapers folder
+- set ONE wallpaper for all displays
+- set MULTIPLE wallpapers for all displays (default)
 
-For speakers (without any wired or bluetooth headphone connected) check
-```
-pactl list sinks short | cut -f2
-```
-
-and use the output here
-```
---sink-nickname "VALUE_DETECTED_HERE:蓼 Speakers" 
-```
-
-For wired headphones, plug them, check again
-```
-pactl list sinks short | cut -f2
-```
-
-and use the output here
-```
---sink-nickname "VALUE_DETECTED_HER: Headphones"
-```
+Uncomment what you prefer and comment the rest. It should be clear enough reading the file.
 
 
-
-## Systray
-Systray has beed disabled by default in *polybar.conig*
-```
-tray-position = none
-```
-If you want to use it change position and adjust the **tray-offset-x** value.
-
-
-## Keymap
+### Keymap
 At the moment this is a simple and dirty snippet of code placed in the *up* file
 
 ```
@@ -250,7 +239,7 @@ key = "k"
 ```
 
 
-## dmenu
+### dmenu
 I am using a custom dmenu color scheme. If you like to use pick it from the config.toml in this repository or configure yours like this:
 
 ```
@@ -261,7 +250,49 @@ modifier = ["modkey"]
 key = "p"
 ```
 
-## Layout module
+## Polybar
+
+### Pulseaudio Control
+This is an interesting module you might want to use, just keep in mind it will grab your device description from
+
+```
+pactl list sinks | grep device.description
+```
+
+and that is usually a very long string.
+The pulseaudio-control module in *polybar.modules* has been configured to use fancier nicknames for speakers and headphone, but you have to replace my values with yours.
+
+For speakers (without any wired or bluetooth headphone connected) check
+```
+pactl list sinks short | cut -f2
+```
+
+and use the output here
+```
+--sink-nickname "VALUE_DETECTED_HERE:蓼 Speakers" 
+```
+
+For wired headphones, plug them, check again
+```
+pactl list sinks short | cut -f2
+```
+
+and use the output here
+```
+--sink-nickname "VALUE_DETECTED_HER: Headphones"
+```
+
+
+### Systray
+Systray has beed disabled by default in *polybar.conig*
+```
+tray-position = none
+```
+If you want to use it change position and adjust the **tray-offset-x** value.
+
+
+
+### Layout module
 By default the layout module is configured in the template.layout file
 ```
 %{O20}
@@ -279,16 +310,19 @@ If you prefer to manage the module in your polybar.config file I left two module
 - layout1, for workspace1
 
 
-## Wallpapers
+## Lemonbar
 
-*up* is configured with the options to
-- set random wallpapers from the /wallpapers folder
-- set ONE wallpaper for all displays
-- set MULTIPLE wallpapers for all displays (default)
+In the **up** script there are two options to run Lemonbar
 
-Uncomment what you prefer and comment the rest. It should be clear enough reading the file.
+```
+# 1) Classic/simple mode - lemonbar generated by lemonbar.liquid
+#leftwm-state -w $index -t $SCRIPTPATH/lemonbar.liquid | lemonbar -g "$width"x"$barheight"+"$x" -f "Iosevka Nerd Font"-11 -B"#1e1f29" -F"#f8f8f2" -u 2 -U"#ffb300"| sh&        
+# 2) Experimental mode - lemonbar generated by a loop in lemonbar.worker  
+exec ~/.config/leftwm/themes/current/lemonbar.worker $index | lemonbar -g "$width"x"$barheight"+"$x" -f "Iosevka Nerd Font"-11 -B"#1e1f29" -F"#f8f8f2" -u 2 -U"#ffb300"| sh&
+```
 
-
+**Classic/simple mode** will only parse what is configured inside *lemonbar.liquid*.
+**Experimental mode** is an attempt to merge a liquid template, in this case *lemonbar.experimental.liquid*, with other simple info module like clock and volume. The core of this mode is the **lemonbar.worker** script.
 
 
 # Credit / Sources

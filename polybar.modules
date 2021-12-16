@@ -343,12 +343,12 @@ label-foreground = ${colors.foreground}
 # You can copy-paste your options for each possible action, which is more
 # trouble-free but repetitive, or apply only the relevant ones (for example
 # --sink-blacklist is only needed for next-sink).
-exec = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.bash --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_07_00.6.iec958-stereo:蓼 Speakers" --sink-nickname "alsa_output.pci-0000_07_00.6.analog-stereo: Headphones" listen
+exec = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.sh --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_07_00.6.iec958-stereo:蓼 Speakers" --sink-nickname "alsa_output.pci-0000_07_00.6.analog-stereo: Headphones" listen
 click-right = exec pavucontrol &
-click-left = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.bash togmute
-click-middle = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.bash --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
-scroll-up = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.bash --volume-max 130 up
-scroll-down = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.bash --volume-max 130 down
+click-left = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.sh togmute
+click-middle = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.sh --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.sh --volume-max 130 up
+scroll-down = ~/.config/leftwm/themes/current/scripts/pulseaudio-control.sh --volume-max 130 down
 
 
 [module/spacer]

@@ -1,3 +1,7 @@
+%{A1:rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi :}
+%{B#ffb300}%{F#1e1f29}    %{F-}%{B-} 
+%{A}
+
 {% for tag in workspace.tags %}
 
 %{T1}
@@ -14,11 +18,7 @@
 
 {% endfor %}
 
-%{T1}
 %{O20}
 %{A1:leftwm-command "NextLayout" :}%{A3:leftwm-command "PreviousLayout" :}
-%{B#ffb300}
-%{F#1e1f29} · {{ workspace.layout }} · %{F-}
-%{B-}
+%{B#ffb300}%{F#1e1f29} · {{ workspace.layout }} · %{F-}%{B-}
 %{A}%{A}
-%{T-}
