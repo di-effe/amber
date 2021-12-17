@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
 
-source $HOME/.config/leftwm/themes/current/scripts/colors_$1.sh
+# Checking that you are screwing up :)
+theme=$1
+if [ -z "$1" ]
+ then
+    # No theme supplied by UP script / falling back to Amber
+    theme="amber"
+fi
+
+# Available themes array
+themes=(amber dracula catppuccin gruvbox nord);
+if [[ " "${themes[@]}" " == *" "$1" "* ]] ;then
+    echo "Good boy.."
+else
+    # Invalid theme supplied by UP script / falling back to Amber
+    theme="amber"
+fi
+
+
+
+source $HOME/.config/leftwm/themes/current/scripts/colors_$theme.sh
 
 # Color files
 THEME_FILE="$HOME/.config/leftwm/themes/current/theme.toml"
