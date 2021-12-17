@@ -19,6 +19,11 @@ STATUSBAR=0
 # - gruvbox
 # - nord
 # - catppuccin
+#
+# NOTE: 
+# To avoid issues colors.sh will check the theme name provided below and try
+# to fallback to the amber theme if what you provide is NULL or does not exist
+# in the array on line 12.
 source $SCRIPTPATH/scripts/colors.sh amber
 ##############################################################################
 
