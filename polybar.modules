@@ -196,7 +196,7 @@ content = ""
 content-padding = 2
 content-foreground = ${color.background}
 content-background = ${color.primary}
-click-left = rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi
+click-left = ~/.config/leftwm/themes/current/rofi/launcher.sh
 
 
 [module/mem]
