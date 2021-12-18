@@ -43,6 +43,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 - color schemes
 
 ![Desktop](./screenshots/colors.png)
+![Desktop](./screenshots/bars.png)
 
 # Screenshots
 
