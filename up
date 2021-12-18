@@ -6,8 +6,6 @@ export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 # 0) polybar
 # 1) lemonbar (not yet ready)
 # 2) eww (not yet ready)
-# 3) yambar (not yet ready)
-# 4) lesbar (not yet ready)
 STATUSBAR=0
 ##############################################################################
 
@@ -149,6 +147,7 @@ case $STATUSBAR in
   1)
     pkill lemonbar &
     pkill polybar &
+    pkill eww &
     index=0
     barheight=30
     export TENDERBLOCKS="$SCRIPTPATH/scripts/bartender"
@@ -160,6 +159,20 @@ case $STATUSBAR in
       exec ~/.config/leftwm/themes/current/lemonbar.worker $index | lemonbar -g "$width"x"$barheight"+"$x" -f "Iosevka Nerd Font"-11 -B$COLOR_BACKGROUND -F$COLOR_FOREGROUND -u 2 -U$COLOR_PRIMARY| sh&
       
       lemonbar -g "$width"x2+$x+$barheight --B$COLOR_PRIMARY -p&   
+      let index=index+1
+    done
+    ;;
+
+  2)
+    pkill lemonbar &
+    pkill polybar &
+    pkill eww &
+    #sleep 1
+    index=0
+    sizes=( $(leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' ) )
+    for size in "${sizes[@]}"
+    do
+        eww -c $SCRIPTPATH open bar$index
       let index=index+1
     done
     ;;

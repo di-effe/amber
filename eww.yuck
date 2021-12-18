@@ -1,0 +1,186 @@
+(defwidget bar0 []
+  (centerbox :orientation "h"
+    (workspaces0)
+    (music)
+    (sidestuff)
+  )
+)
+
+(defwidget bar1 []
+  (centerbox :orientation "h"
+    (workspaces1)
+    (music)
+    (sidestuff)
+  )
+)
+
+(defwidget workspaces0 []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+       :spacing 10
+    (launcher)
+    (literal :valign "center" 
+             :content {wm-tags-0}
+    )
+    (ws-layout-0)
+  )
+)    
+
+(defwidget workspaces1 []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+       :spacing 10
+    (launcher)   
+    (literal :valign "center" 
+             :content {wm-tags-1}
+    )
+    (ws-layout-1)
+  )
+)
+
+(defwidget sidestuff []
+  (box :class "sidestuff" 
+       :orientation "h" 
+       :space-evenly false 
+       :halign "end"
+    (slider-wifi)
+    (slider-vol)
+    (clock)
+    (powermenu)
+  )
+)
+(defwidget ws-layout-0 []
+  (box :class "ws-layout"
+       :space-evenly false
+       :halign "start" 
+    (button :onclick "leftwm-command NextLayout"
+            :onrightclick "leftwm-command PreviousLayout"
+      {workspace-layout-0})
+  )
+)
+
+(defwidget ws-layout-1 []
+  (box :class "ws-layout"
+       :space-evenly false
+       :halign "start" 
+    (button :onclick "leftwm-command NextLayout"
+            :onrightclick "leftwm-command PreviousLayout"
+     {workspace-layout-1})
+  )
+)
+
+(defwidget launcher []
+  (box :class "box-launcher"
+       :orientation "h"
+    (button :class "button-launcher" 
+            :onclick "~/.config/leftwm/themes/current/rofi/launcher.sh" ""
+    )
+  )
+)
+
+(defwidget powermenu []
+  (box :class "box-launcher"
+       :orientation "h"
+    (button :class "button-launcher" 
+            :onclick "~/.config/leftwm/themes/current/rofi/powermenu.sh" "襤"
+    )
+  )
+)
+
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "🎵${music}" : ""}
+  )
+)
+
+
+(defwidget slider-vol []
+  (box :class "metric" 
+       :orientation "h" 
+       :space-evenly "false"
+       :tooltip volume
+    (button :onclick "pavucontrol" ""
+    )
+    (scale :min 0
+           :max 101
+           :value volume
+           :onchange "amixer -D pulse sset Master {}%"
+    )
+  )
+)
+
+
+(defwidget slider-wifi []
+  (box :class "metric"
+       :orientation "h"
+       :space-evenly "false"
+       :tooltip ssid
+      (box "")
+      (scale :min 0
+             :max 101
+             :value {wifi-signal != "" ? wifi-signal : "0.0"}
+      )
+  )
+)               
+
+(defwidget clock []
+  (box :class "clock" 
+       :orientation "h" 
+       :space-evenly "false" 
+    (button) {day + " " + month + " " + hour + ":" + minute}
+  )
+)
+
+
+; tags
+(deflisten wm-tags-0 "leftwm-state -w 0 -t ~/.config/leftwm/themes/current/eww.liquid")  
+(deflisten wm-tags-1 "leftwm-state -w 1 -t ~/.config/leftwm/themes/current/eww.liquid")   
+; sliders
+(defpoll volume :interval "1s" "scripts/getvol")
+(defpoll wifi-signal :initial "0" :interval "10s" "scripts/getwifi")
+(defpoll ssid :interval "10s" "nmcli -f IN-USE,SSID device wifi | awk '/^\*/{if (NR!=1) {print $2}}'")
+; Time
+(defpoll day :interval "5h" "date '+%d'")
+(defpoll month :interval "10h" "date '+%b'")
+(defpoll minute :interval "10s" "date '+%M'")
+(defpoll hour :interval "1m" "date '+%H'")
+(defpoll year :interval "15h" "date '+%Y'")
+; Layouts
+(deflisten workspace-layout-0 'leftwm-state -w 0 -s "{{workspace.layout}}"')
+(deflisten workspace-layout-1 'leftwm-state -w 1 -s "{{workspace.layout}}"')
+; Playing..
+(deflisten music :initial "" "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+
+
+(defwindow bar0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "30px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "35px")
+  (bar0)
+)
+
+  (defwindow bar1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "30px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "35px")
+  (bar1)
+)

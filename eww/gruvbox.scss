@@ -1,0 +1,114 @@
+// Gruvbox
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar0 {
+  background-color: #3C3836;
+  color: #EBDBB2;
+  padding: 0;
+  border-bottom: 2px solid;
+  border-color: #D79921;
+  border-radius: 0;
+  font-family: Iosevka Nerd Font;
+  font-size: 13px;
+}
+
+.bar1 {
+  background-color: #3C3836;
+  color: #EBDBB2;
+  padding: 0;
+  border-bottom: 2px solid;
+  border-color: #D79921;
+  border-radius: 0;
+  font-family: Iosevka Nerd Font;
+  font-size: 13px;
+}
+
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+  all: unset;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D79921;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D79921;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.workspaces {
+  all: unset;
+  padding: 0;
+}
+
+.ws-button-mine {
+  color: #3C3836;
+  background-color: #D79921;
+  border-radius: 4px;
+}
+.ws-button-visible {
+  color: #D79921;
+}
+.ws-button-busy {
+  color: #E8BC0C;
+}
+.ws-button {
+  color: #EBDBB2;
+}
+
+.ws-layout {
+  all: unset;
+  color: #3C3836;
+  background-color: #D79921;
+  border-radius: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 15px;
+}
+
+.box-launcher {
+  background-color: #D79921;
+  color: #3C3836;
+  font-size: 1.1em;
+  font-weight:bold;
+}
+
+.button-launcher {
+  padding-left: 12px;
+  padding-right: 14px;
+}
+
+.clock {
+  margin-right: 20px;
+  color: #EBDBB2;
+}

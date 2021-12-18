@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nmcli -f IN-USE,SIGNAL,SSID device wifi | awk '/^\*/{if (NR!=1) {print $2}}'

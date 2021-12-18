@@ -1,0 +1,114 @@
+// Catppuccin
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar0 {
+  background-color: #1E1E28;
+  color: #A4B9EF;
+  padding: 0;
+  border-bottom: 2px solid;
+  border-color: #F0AFE1;
+  border-radius: 0;
+  font-family: Iosevka Nerd Font;
+  font-size: 13px;
+}
+
+.bar1 {
+  background-color: #1E1E28;
+  color: #A4B9EF;
+  padding: 0;
+  border-bottom: 2px solid;
+  border-color: #F0AFE1;
+  border-radius: 0;
+  font-family: Iosevka Nerd Font;
+  font-size: 13px;
+}
+
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+  all: unset;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #F0AFE1;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.metric scale trough highlight {
+  all: unset;
+  background-color: #F0AFE1;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.workspaces {
+  all: unset;
+  padding: 0;
+}
+
+.ws-button-mine {
+  color: #1E1E28;
+  background-color: #F0AFE1;
+  border-radius: 4px;
+}
+.ws-button-visible {
+  color: #F0AFE1;
+}
+.ws-button-busy {
+  color: #C6AAE8;
+}
+.ws-button {
+  color: #A4B9EF;
+}
+
+.ws-layout {
+  all: unset;
+  color: #1E1E28;
+  background-color: #F0AFE1;
+  border-radius: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 15px;
+}
+
+.box-launcher {
+  background-color: #F0AFE1;
+  color: #1E1E28;
+  font-size: 1.1em;
+  font-weight:bold;
+}
+
+.button-launcher {
+  padding-left: 12px;
+  padding-right: 14px;
+}
+
+.clock {
+  margin-right: 20px;
+  color: #A4B9EF;
+}

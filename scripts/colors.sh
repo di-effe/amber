@@ -17,8 +17,6 @@ else
     theme="amber"
 fi
 
-
-
 source $HOME/.config/leftwm/themes/current/scripts/colors_$theme.sh
 
 # Color files
@@ -74,8 +72,9 @@ sed -i -e "s/%{B#[A-Za-z0-9_]*}%{F#[A-Za-z0-9_]*}/%{B$COLOR_PRIMARY}%{F$COLOR_BA
 sed -i -e "s/POWERMENU='%{B#[A-Za-z0-9_]*}%{F#[A-Za-z0-9_]*}%/POWERMENU='%{B$COLOR_PRIMARY}%{F$COLOR_BACKGROUND}%/g" $LEMONBAR_WORKER_FILE
 sed -i -e "s/DOT='%{F#[A-Za-z0-9_]*}·%{F-}'/DOT='%{F$COLOR_INACTIVE}·%{F-}'/g" $LEMONBAR_WORKER_FILE
 
-
-
-# Bluetooth script colors
+# Change Bluetooth script colors
 sed -i -e "s/%{F#[A-Za-z0-9_]*/%{F$COLOR_INACTIVE/g" $SCRIPT_BT_FILE
 sed -i -e "s/%{+o}%{F#[A-Za-z0-9_]*/%{+o}%{F$COLOR_PRIMARY/g" $SCRIPT_BT_FILE
+
+# Change EWW SCSS
+cp $HOME/.config/leftwm/themes/current/eww/$theme.scss $HOME/.config/leftwm/themes/current/eww.scss

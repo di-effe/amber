@@ -16,7 +16,9 @@
     - [Systray](#systray)
     - [Layout module](#layout-module)
   - [Lemonbar](#lemonbar)
+  - [EWW](#eww)
 - [Changelog](#changelog)
+  - [v0.2.2](#v022)
   - [v0.2.1](#v021)
   - [v0.2.0](#v020)
   - [v0.1.2](#v012)
@@ -37,7 +39,7 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 
 # Features
 - multi monitor support
-- multiple statusbar options
+- multiple statusbar options (polybar / lemonbar / eww)
 - color schemes
 
 ![Desktop](./screenshots/colors.png)
@@ -54,7 +56,8 @@ Also development and tests are done on ArcolinuxB, so that distro would likely s
 ![Desktop](./screenshots/amber_desktop_lemonbar.png)
 **Lemonbar (experimental wrapper)** 
 ![Desktop](./screenshots/amber_desktop_lemonbar_experimental.png)
-
+**EWW** 
+![Desktop](./screenshots/amber_desktop_eww.png)
 
 
 # Dependencies
@@ -154,8 +157,6 @@ By default Amber is running with a modular polybar configuration, but you can ed
 # 0) polybar
 # 1) lemonbar (very basic implementation with app launcher, tags and powermenu)
 # 2) eww (not yet ready)
-# 3) yambar (not yet ready)
-# 4) lesbar (not yet ready)
 STATUSBAR=0
 ##############################################################################
 ```
@@ -302,7 +303,15 @@ exec ~/.config/leftwm/themes/current/lemonbar.worker $index | lemonbar -g "$widt
 **Experimental mode** is an attempt to merge a liquid template, in this case *lemonbar.experimental.liquid*, with other simple info module like clock and volume. The core of this mode is the **lemonbar.worker** script.
 
 
+## EWW
+Nothing fancy here. Statusbar is controlled by **eww.yuck** and styled by **eww.scss**.
+This last one is overwritten by the **up** script, according to the color theme selected. Source SCSS files for each theme are located in the */eww* folder.
+
+
 # Changelog
+
+## v0.2.2
+- EWW statusbar
 
 ## v0.2.1
 - Lemonbar experimental wrapper 
@@ -345,9 +354,9 @@ I did my best to implement a Lemonbar asynchronous wrapper able to provide diffe
 - [x] Lemonbar modules implementation (kinda)
 - [ ] A better implementation for powermenu
 - [ ] A better keymap implementation
-- [ ] eww statusbar
-- [ ] yambar statusbar
-- [ ] lesbar statusbar
+- [x] eww statusbar
+- [ ] ~~yambar statusbar~~
+- [ ] ~~lesbar statusbar~~
 
 
 # Credit / Sources

@@ -11,20 +11,21 @@ echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
 
 # Kill procs
-pkill picom 
-pkill compton
-pkill polybar
-pkill lemonbar
-pkill conky
-pkill nm-applet
-pkill pamac-tray
-pkill xfce4-power-manager
-pkill blueberry-tray
-pkill volumeicon
-pkill xfce4-notifyd
-pkill dunst
-pkill wired
-pkill sxhkd
+pkill picom &
+pkill compton &
+pkill polybar &
+pkill lemonbar &
+pkill eww &
+pkill conky &
+pkill nm-applet &
+pkill pamac-tray &
+pkill xfce4-power-manager &
+pkill blueberry-tray &
+pkill volumeicon &
+pkill xfce4-notifyd &
+pkill dunst &
+pkill wired &
+pkill sxhkd &
 
 
 # Remove temp files
