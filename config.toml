@@ -1,7 +1,7 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4"]
+tags = ["1", "2", "3", "4", "5", "6"]
 layouts = [
     "LeftWiderRightStack",
     "MainAndDeck",
@@ -31,7 +31,7 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi"
+value = "~/.config/leftwm/themes/current/rofi/launcher.sh"
 modifier = ["modkey"]
 key = "space"
 
