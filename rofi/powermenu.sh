@@ -14,12 +14,8 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 2)"
 case $chosen in
     $lock)
-		if [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		elif [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		fi
-	;;    
+        ~/.config/leftwm/themes/current/scripts/lockscreen
+	      ;;    
     $shutdown)
         systemctl poweroff
         ;;
@@ -27,9 +23,9 @@ case $chosen in
         systemctl reboot
         ;;
     $suspend)
-	mpc -q pause
-	amixer set Master mute
-	systemctl suspend
+	      mpc -q pause
+	      amixer set Master mute
+	      systemctl suspend
         ;;
     $logout)
         loginctl terminate-session ${XDG_SESSION_ID-}	

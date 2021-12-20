@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+scrot /tmp/screenshot.png
+convert /tmp/screenshot.png -scale 10% -scale 1000% -fill "#282828" -colorize 10% /tmp/lockscreen.png
+
+## Get colors -----------------
+FG="#c8ccd4"
+BG="#75a1eb"
+
+BLACK="#676f80"
+RED="#e32231"
+GREEN="#1d2d47"
+YELLOW="#158569"
+BLUE="#61afef"
+MAGENTA="#c678dd"
+CYAN="#56b6c2"
+WHITE="#abb2bf"
+
+
+## Exec	-----------------
+i3lock \
+--color="${BG}D9"			\
+--image="/tmp/lockscreen.png" \
+\
+--insidever-color=${GREEN}	\
+--insidewrong-color=${RED}	\
+--inside-color="${BG}00"	\
+\
+--ringver-color=${GREEN}	\
+--ringwrong-color=${RED}	\
+--ring-color=${BLUE}		\
+\
+--line-color=${BG}			\
+--separator-color=${BG}		\
+\
+--keyhl-color=${YELLOW}		\
+--bshl-color=${RED}			\
+\
+--verif-color=${BG}			\
+--wrong-color=${FG}			\
+--layout-color=${FG}		\
+\
+--time-color=${FG}			\
+--date-color=${FG}			\
+\
+--pass-media-keys			\
+--pass-screen-keys			\
+--pass-power-keys			\
+--pass-volume-keys			\
+--{time,date,layout,verif,wrong,greeter}-font="Iosevka Nerd Font 30"			\
+--{layout,verif,wrong,greeter}-size=18							\
+--time-size=40													\
+--date-size=20													\
+--radius 120				\
+--ring-width 10.0			\
+--screen 1					\
+--clock						\
+--indicator					\
+--time-str="%H:%M"		\
+--date-str="%b %d, %G"		

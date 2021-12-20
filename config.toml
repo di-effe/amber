@@ -43,7 +43,7 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "brave https://github.com/di-effe/"
+value = "firefox https://github.com/di-effe/"
 modifier = ["modkey", "Shift"]
 key = "b"
 
