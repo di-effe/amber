@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
 
+# Cleanup
+rm -f /tmp/screenshot*.png
+
+# Take screenshot
 scrot /tmp/screenshot.png
-convert /tmp/screenshot.png -scale 10% -scale 1000% -fill "#282828" -colorize 10% /tmp/lockscreen.png
+
+# Pixelate
+convert /tmp/screenshot.png \
+-scale 10% \
+-scale 1000% \
+-fill "#282828" \
+-colorize 30% \
+/tmp/lockscreen.png
 
 ## Get colors -----------------
 FG="#c8ccd4"
@@ -24,7 +35,7 @@ i3lock \
 \
 --insidever-color=${GREEN}	\
 --insidewrong-color=${RED}	\
---inside-color="${BG}00"	\
+--inside-color="${BLACK}"	\
 \
 --ringver-color=${GREEN}	\
 --ringwrong-color=${RED}	\
@@ -58,3 +69,7 @@ i3lock \
 --indicator					\
 --time-str="%H:%M"		\
 --date-str="%b %d, %G"		
+
+# Cleanup
+
+rm -f /tmp/screenshot*.png
