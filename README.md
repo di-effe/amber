@@ -98,6 +98,7 @@ In general it might be a good idea to install all [nerd fonts](https://www.nerdf
 - alacritty (or change configs to match your terminal emulator)
 - dunst / xfce4-notifyd  (adapt *up* script accordingly)
 - [paper-icon-theme](https://github.com/snwh/paper-icon-theme)
+- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - iwconfig 
 
 
