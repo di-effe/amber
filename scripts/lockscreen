@@ -15,38 +15,59 @@ convert /tmp/screenshot.png \
 /tmp/lockscreen.png
 
 # i3Lock
-DARK='#332F2E'
-BLANK='#00000000'
-CLEAR='#ffffff22'
-DEFAULT='#FFB300cc'
-TEXT='#FCFBDCcc'
-WRONG='#880000bb'
-VERIFYING='#bb00bbbb'
+alpha="D9"
+base03="#002b36"
+base02="#212121"
+base01="#586e75"
+base00="#657b83"
+base0="#839496"
+base1="#93a1a1"
+base2="#eee8d5"
+base3="#fdf6e3"
+yellow="#fdd835"
+orange="#fb8c00"
+red="#e53935"
+magenta="#d33682"
+violet="#8e24aa"
+blue="#0DD7FF"
+cyan="#00acc1"
+green="#43a047"
+amber="#ffb300"
+white="#f5f5f5"
+lime="#c0ca33"
+black="#212121"
 
 i3lock \
---image="/tmp/lockscreen.png" \
---insidever-color=$DARK     \
---ringver-color=$VERIFYING   \
-\
---insidewrong-color=$DARK   \
---ringwrong-color=$WRONG     \
-\
---inside-color=$DARK        \
---ring-color=$DEFAULT        \
---line-color=$BLANK          \
---separator-color=$DEFAULT   \
-\
---verif-color=$TEXT          \
---wrong-color=$TEXT          \
---time-color=$TEXT           \
---date-color=$TEXT           \
---layout-color=$TEXT         \
---keyhl-color=$WRONG         \
---bshl-color=$WRONG          \
-\
---screen 1                   \
---clock                      \
---indicator                  \
---time-str="%H:%M:%S"        \
---date-str="%A, %m %Y"       \
-
+  --image="/tmp/lockscreen.png" \
+  --insidever-color=$base02$alpha \
+  --insidewrong-color=$base02$alpha \
+  --inside-color=$base02$alpha \
+  --ringver-color=$green$alpha \
+  --ringwrong-color=$red$alpha \
+  --ringver-color=$green$alpha \
+  --ringwrong-color=$red$alpha \
+  --ring-color=$amber$alpha \
+  --line-uses-ring \
+  --keyhl-color=$blue$alpha \
+  --bshl-color=$orange$alpha \
+  --separator-color=$base01$alpha \
+  --verif-color=$green \
+  --wrong-color=$red \
+  --layout-color=$white \
+  --date-color=$white \
+  --time-color=$white \
+  --screen 1 \
+  --clock \
+  --indicator \
+  --time-str="%H:%M:%S" \
+  --date-str="%a %b %e %Y" \
+  --verif-text="Verifying..." \
+  --wrong-text="Auth Failed" \
+  --noinput="No Input" \
+  --lock-text="Locking..." \
+  --lockfailed="Lock Failed" \
+  --radius=120 \
+  --ring-width=15 \
+  --pass-media-keys \
+  --pass-screen-keys \
+  --pass-volume-keys \
