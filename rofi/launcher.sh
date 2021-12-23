@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rofi -show drun -show-icons -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi
+rofi -show drun -show-icons -icon-theme "Papirus" -theme ~/.config/leftwm/themes/current/rofi/launcher.rasi

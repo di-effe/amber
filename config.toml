@@ -1,7 +1,7 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6"]
+tags = ["A", "B", "C", "D", "E", "F"]
 layouts = [
     "LeftWiderRightStack",
     "MainAndDeck",
@@ -31,13 +31,13 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "~/.config/leftwm/themes/current/rofi/launcher.sh"
+value = "$HOME/.config/leftwm/themes/current/rofi/launcher.sh"
 modifier = ["modkey"]
 key = "space"
 
 [[keybind]]
 command = "Execute"
-value = "~/.config/leftwm/themes/current/rofi/powermenu.sh"
+value = "$HOME/.config/leftwm/themes/current/rofi/powermenu.sh"
 modifier = ["modkey", "Shift"]
 key = "p"
 
@@ -304,12 +304,22 @@ key = "f"
 
 [[keybind]]
 command = "Execute"
-value = "rofi -dmenu -input /tmp/leftwm-keymap -window-title 'Keymap' -theme ~/.config/leftwm/themes/amber/rofi/keymap.rasi"
+value = "rofi -dmenu -input /tmp/leftwm-keymap -window-title 'Keymap' -theme $HOME/.config/leftwm/themes/amber/rofi/keymap.rasi"
 modifier = ["modkey", "Shift"]
-key = "k"
+key = "m"
 
 [[keybind]]
 command = "Execute"
-value = "~/.config/rofi/bin/menu_screenshot"
+value = "$HOME/.config/rofi/bin/menu_screenshot"
 modifier = ["modkey"]
 key = "s"
+
+[[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey", "Shift"]
+key = "Right"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey", "Shift"]
+key = "Left"

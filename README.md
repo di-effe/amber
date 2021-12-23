@@ -87,7 +87,6 @@ In general it might be a good idea to install all [nerd fonts](https://www.nerdf
 - [PulseAudio Control](https://github.com/marioortizmanero/polybar-pulseaudio-control)
 - pavucontrol
 - nm-connection-editor
-- betterlockscreen
 - blueberry
 - pamac
 
@@ -97,7 +96,6 @@ In general it might be a good idea to install all [nerd fonts](https://www.nerdf
 `Misc`
 - alacritty (or change configs to match your terminal emulator)
 - dunst / xfce4-notifyd  (adapt *up* script accordingly)
-- [paper-icon-theme](https://github.com/snwh/paper-icon-theme)
 - [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - iwconfig 
 
@@ -214,7 +212,7 @@ My config.toml file is configured like this:
 command = "Execute"
 value = "rofi -dmenu -input /tmp/leftwm-keymap -window-title 'Keymap' -theme ~/.config/leftwm/themes/amber/rofi/keymap.rasi"
 modifier = ["modkey", "Shift"]
-key = "k"
+key = "m"
 ```
 
 
