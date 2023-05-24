@@ -20,7 +20,7 @@ fi
 source $HOME/.config/leftwm/themes/current/scripts/colors_$theme.sh
 
 # Color files
-THEME_FILE="$HOME/.config/leftwm/themes/current/theme.toml"
+THEME_FILE="$HOME/.config/leftwm/themes/current/theme.ron"
 POLYBAR_FILE="$HOME/.config/leftwm/themes/current/polybar.colors"
 LIQUID_POLYBAR_FILE="$HOME/.config/leftwm/themes/current/polybar.liquid"
 LEMONBAR_WORKER_FILE="$HOME/.config/leftwm/themes/current/lemonbar.worker"
